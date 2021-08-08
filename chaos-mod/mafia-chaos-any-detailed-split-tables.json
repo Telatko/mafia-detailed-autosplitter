@@ -1,0 +1,1708 @@
+{
+  "category-name": "Chaos Any% (detailed)",
+  "bertone-required": false,
+  "checkpoint-0": {
+    "name": " ",
+    "checked": true
+  },
+  "0|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "0|On the Way to Salieri Bar|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-5": {
+    "name": "Passenger 1",
+    "checked": true
+  },
+  "5|Dialog end|timer": {
+    "name": " Driving",
+    "checked": true
+  },
+  "5|Passenger 1 Route|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-10": {
+    "name": "Passenger 2",
+    "checked": true
+  },
+  "10|Dialog end|timer": {
+    "name": " Driving",
+    "checked": true
+  },
+  "10|Passenger 2 Route|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-15": {
+    "name": "Passenger 3",
+    "checked": true
+  },
+  "15|Dialog end|timer": {
+    "name": " Driving",
+    "checked": true
+  },
+  "15|Passenger 3 Route|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-20": {
+    "name": "Passenger 4",
+    "checked": true
+  },
+  "20|Dialog end|timer": {
+    "name": " Driving",
+    "checked": true
+  },
+  "20|Passenger 4 Route|route": {
+    "name": " ",
+    "checked": false
+  },
+  "20|On the Way to Hoboken|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-25": {
+    "name": "Passenger 5",
+    "checked": true
+  },
+  "25|Dialog end|sound": {
+    "name": " Driving",
+    "checked": true
+  },
+  "25|Dialog end|timer": {
+    "name": " ",
+    "checked": false
+  },
+  "25|Passenger 5 Route|route": {
+    "name": " ",
+    "checked": false
+  },
+  "25|On the Way to Central Island|location": {
+    "name": " ",
+    "checked": true
+  },
+  "25|Parking Lot|sound": {
+    "name": " Parking lot",
+    "checked": true
+  },
+  "checkpoint-30": {
+    "name": "Coffee break",
+    "checked": true
+  },
+  "30|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-35": {
+    "name": "Going to Morello bar",
+    "checked": true
+  },
+  "checkpoint-40": {
+    "name": " ",
+    "checked": false
+  },
+  "40|Route to the Bolt-Thrower|route": {
+    "name": " ",
+    "checked": false
+  },
+  "40|Bolt-Thrower Easter Egg|location": {
+    "name": " ",
+    "checked": false
+  },
+  "40|Bolt-Thrower|car": {
+    "name": " ",
+    "checked": false
+  },
+  "40|Route from Salieri Bar to Morello's Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "40|Route Bolt-Thrower -> Morello's Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "40|Approaching Morello's Bar|location": {
+    "name": "Destroying the cars",
+    "checked": true
+  },
+  "checkpoint-45": {
+    "name": " ",
+    "checked": false
+  },
+  "45|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "45|On the Way to Salieri Bar|location": {
+    "name": "Returning to Salieri bar",
+    "checked": true
+  },
+  "checkpoint-50": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "50|Route to Ralphie|route": {
+    "name": " ",
+    "checked": false
+  },
+  "50|Ralphie: start|cutscene start": {
+    "name": " Ralphie",
+    "checked": true
+  },
+  "50|Ralphie: end|cutscene end": {
+    "name": " Going to Vincenzo",
+    "checked": true
+  },
+  "50|Route to Vincenzo|route": {
+    "name": " ",
+    "checked": false
+  },
+  "50|Vincenzo: start|cutscene start": {
+    "name": " Vincenzo",
+    "checked": true
+  },
+  "50|Vincenzo: end|cutscene end": {
+    "name": " Going back to Ralphie",
+    "checked": true
+  },
+  "50|Route back to Ralphie|route": {
+    "name": " ",
+    "checked": false
+  },
+  "50|Unlocking the Car: start|cutscene start": {
+    "name": " Learning how to unlock Bolt Model B",
+    "checked": true
+  },
+  "50|Unlocking the Car: end|cutscene end": {
+    "name": " Departure",
+    "checked": true
+  },
+  "checkpoint-55": {
+    "name": "City",
+    "checked": true
+  },
+  "55|Route to Central Island|route": {
+    "name": " ",
+    "checked": false
+  },
+  "55|West Marshall Bridge|location": {
+    "name": " Collecting Central Island money",
+    "checked": true
+  },
+  "55|Central Island Money Collected|sound": {
+    "name": " Going to Hoboken",
+    "checked": true
+  },
+  "55|Route to Hoboken|route": {
+    "name": " ",
+    "checked": false
+  },
+  "55|Hoboken Shortcut|location": {
+    "name": " Collecting Hoboken money",
+    "checked": true
+  },
+  "55|Hoboken Money Collected|sound": {
+    "name": " Going to countryside",
+    "checked": true
+  },
+  "55|Route to Clark's Motel|route": {
+    "name": " ",
+    "checked": false
+  },
+  "55|Countryside|location": {
+    "name": " Countryside drive",
+    "checked": true
+  },
+  "checkpoint-60": {
+    "name": "Clark's motel",
+    "checked": true
+  },
+  "checkpoint-65": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-70": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "70|Route to Ralphie|route": {
+    "name": " ",
+    "checked": false
+  },
+  "70|Ralphie: start|cutscene start": {
+    "name": " Ralphie",
+    "checked": true
+  },
+  "70|Ralphie: end|cutscene end": {
+    "name": " Getting Bolt-Thrower",
+    "checked": true
+  },
+  "70|Route to the Bolt-Thrower|route": {
+    "name": " ",
+    "checked": false
+  },
+  "70|Unlocking the Car: start|cutscene start": {
+    "name": " Learning how to Unlock Schubert Six",
+    "checked": true
+  },
+  "70|Unlocking the Car: end|cutscene end": {
+    "name": " Departure",
+    "checked": true
+  },
+  "checkpoint-75": {
+    "name": "Going to the race track",
+    "checked": true
+  },
+  "75|Route to the Garage|route": {
+    "name": " ",
+    "checked": false
+  },
+  "75|Bobby's Hut|sound": {
+    "name": " Bobby's hut",
+    "checked": true
+  },
+  "75|Barrier|sound": {
+    "name": " Going to the garage",
+    "checked": true
+  },
+  "75|Garage: Before Driving|cutscene start": {
+    "name": " Dialog with Bobby",
+    "checked": true
+  },
+  "checkpoint-80": {
+    "name": "Driving to Lucas Bertone",
+    "checked": true
+  },
+  "80|Route to Lucas Bertone|route": {
+    "name": " ",
+    "checked": false
+  },
+  "80|On the Way to Lucas Bertone|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-85": {
+    "name": "Driving back to the race track",
+    "checked": true
+  },
+  "85|Route to the Garage|route": {
+    "name": " ",
+    "checked": false
+  },
+  "85|On the Way from Lucas Bertone|location": {
+    "name": " ",
+    "checked": true
+  },
+  "85|Garage: After Driving|cutscene start": {
+    "name": " Dialog with Bobby",
+    "checked": true
+  },
+  "checkpoint-90": {
+    "name": "Returning to Salieri Bar",
+    "checked": true
+  },
+  "90|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "90|On the Way to Salieri Bar|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-95": {
+    "name": "Salieri Bar",
+    "checked": true
+  },
+  "95|Route to the Bolt-Thrower|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-100": {
+    "name": "Going to the race track",
+    "checked": true
+  },
+  "100|Route to the Race Track|route": {
+    "name": " ",
+    "checked": false
+  },
+  "100|On the Way to the Race Track|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-105": {
+    "name": "Race",
+    "checked": true
+  },
+  "105|2nd lap|race lap": {
+    "name": " 2nd lap",
+    "checked": true
+  },
+  "105|3rd lap|race lap": {
+    "name": " 3rd lap",
+    "checked": true
+  },
+  "105|4th lap|race lap": {
+    "name": " 4th lap",
+    "checked": true
+  },
+  "105|5th lap|race lap": {
+    "name": " 5th lap",
+    "checked": true
+  },
+  "checkpoint-110": {
+    "name": "Going to Lucas Bertone",
+    "checked": true
+  },
+  "110|Route to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-115": {
+    "name": "Returning to Salieri Bar",
+    "checked": true
+  },
+  "115|Route to the Lassiter V16 Phaeton|route": {
+    "name": " ",
+    "checked": false
+  },
+  "115|Route Lassiter V16 -> Salieri bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "115|Route from Lucas to Salieri bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "115|Lassiter V16 Phaeton|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-125": {
+    "name": "Moonlight stroll",
+    "checked": true
+  },
+  "checkpoint-130": {
+    "name": " ",
+    "checked": false
+  },
+  "130|Route to Sarah's Apartment 1|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-131": {
+    "name": "On the way to Sarah's apartment",
+    "checked": true
+  },
+  "131|Route to Sarah's Apartment 2|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-135": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "135|Route to Vincenzo|route": {
+    "name": " ",
+    "checked": false
+  },
+  "135|Vincenzo: start|cutscene start": {
+    "name": " Vincenzo",
+    "checked": true
+  },
+  "135|Vincenzo: end|cutscene end": {
+    "name": " Departure",
+    "checked": true
+  },
+  "135|Route to the Bolt-Thrower|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-140": {
+    "name": "Going to Biff",
+    "checked": true
+  },
+  "140|Route to the Chase|route": {
+    "name": " ",
+    "checked": false
+  },
+  "140|Biff|sound": {
+    "name": "Service Station",
+    "checked": true
+  },
+  "checkpoint-145": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-146": {
+    "name": " ",
+    "checked": true
+  },
+  "146|Route to the Car|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-150": {
+    "name": "Going to hotel Corleone",
+    "checked": true
+  },
+  "150|Route to the Bolt-Thrower|route": {
+    "name": " ",
+    "checked": false
+  },
+  "150|Bolt-Thrower|car": {
+    "name": " ",
+    "checked": false
+  },
+  "150|Route to Hotel Corleone|route": {
+    "name": " ",
+    "checked": false
+  },
+  "150|Bolt Ace|car": {
+    "name": " ",
+    "checked": false
+  },
+  "150|On the Way to the Hotel|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-155": {
+    "name": "Hotel Corleone",
+    "checked": true
+  },
+  "155|Route to the Church|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-160": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-165": {
+    "name": "Church",
+    "checked": true
+  },
+  "checkpoint-170": {
+    "name": "Returning to Salieri bar",
+    "checked": true
+  },
+  "170|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "170|On the Way to Salieri Bar|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-185": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "185|Route to Ralphie|route": {
+    "name": " ",
+    "checked": false
+  },
+  "185|Ralphie: start|cutscene start": {
+    "name": " Ralphie",
+    "checked": true
+  },
+  "185|Ralphie: end|cutscene end": {
+    "name": " Starting the engine",
+    "checked": true
+  },
+  "185|Unlocking the Car: start|cutscene start": {
+    "name": " Learning how to unluck Bolt V8",
+    "checked": true
+  },
+  "185|Unlocking the Car: end|cutscene end": {
+    "name": " Departure",
+    "checked": true
+  },
+  "checkpoint-190": {
+    "name": "Going to the warehouse",
+    "checked": true
+  },
+  "190|Route to the Warehouse|route": {
+    "name": " ",
+    "checked": false
+  },
+  "190|On the Way to the Warehouse|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-195": {
+    "name": "Farm",
+    "checked": true
+  },
+  "195|Route to the Truck|route": {
+    "name": " ",
+    "checked": false
+  },
+  "195|Truck|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "195|Route to Paulie|route": {
+    "name": " ",
+    "checked": false
+  },
+  "195|Paulie: start|cutscene start": {
+    "name": " Paulie",
+    "checked": true
+  },
+  "195|Paulie: end|cutscene end": {
+    "name": " Going to the barn",
+    "checked": true
+  },
+  "195|Route to the Barn|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-197": {
+    "name": " Saving Sam",
+    "checked": true
+  },
+  "197|Sam: start|cutscene start": {
+    "name": " Sam",
+    "checked": true
+  },
+  "197|Sam: end|cutscene end": {
+    "name": " Police",
+    "checked": true
+  },
+  "checkpoint-200": {
+    "name": "Chase",
+    "checked": true
+  },
+  "checkpoint-205": {
+    "name": "Returning to Salieri Bar",
+    "checked": true
+  },
+  "205|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "205|Route to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "trip-return": {
+    "name": " ",
+    "checked": true
+  },
+  "205|Lucas Assignment|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-220": {
+    "name": " ",
+    "checked": false
+  },
+  "220|Route to Lucas' Friend|route": {
+    "name": " ",
+    "checked": false
+  },
+  "220|Tip-off: start|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "220|Tip-off: end|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "220|Route back to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "220|Reporting to Lucas: start|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "220|Reporting to Lucas: end|cutscene end": {
+    "name": " ",
+    "checked": false
+  },
+  "220|Unlocking the Car: start|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-223": {
+    "name": " ",
+    "checked": false
+  },
+  "223|Route to the Ulver Airstream Fordor|route": {
+    "name": " ",
+    "checked": false
+  },
+  "223|Ulver Airstream Fordor|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "223|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-225": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "225|Route to Vincenzo|route": {
+    "name": " ",
+    "checked": false
+  },
+  "225|Vincenzo: start|cutscene start": {
+    "name": " Vincenzo",
+    "checked": true
+  },
+  "225|Vincenzo: end|cutscene end": {
+    "name": " Departure",
+    "checked": true
+  },
+  "checkpoint-230": {
+    "name": "City",
+    "checked": true
+  },
+  "230|Route to Joe|route": {
+    "name": " ",
+    "checked": false
+  },
+  "230|On the Way to Joe|location": {
+    "name": " Interrogation",
+    "checked": true
+  },
+  "omerta-joe-sound": {
+    "name": " ",
+    "checked": false
+  },
+  "omerta-joe-location": {
+    "name": " Following Frank",
+    "checked": true
+  },
+  "omerta-to-hideout": {
+    "name": " ",
+    "checked": false
+  },
+  "omerta-hideout": {
+    "name": " ",
+    "checked": false
+  },
+  "omerta-to-airport": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-235": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-240": {
+    "name": "Airport",
+    "checked": true
+  },
+  "240|Arrival|cutscene end": {
+    "name": " Clearing the Lobby",
+    "checked": true
+  },
+  "240|Lobby Cleared: start|cutscene start": {
+    "name": " Frank's escaping",
+    "checked": true
+  },
+  "240|Lobby Cleared: end|cutscene end": {
+    "name": " Chasing Frank",
+    "checked": true
+  },
+  "checkpoint-243": {
+    "name": " Getting Frank's family",
+    "checked": true
+  },
+  "243|Route to Frank's Family|route": {
+    "name": " ",
+    "checked": false
+  },
+  "243|Meeting Frank's Family|sound": {
+    "name": " Going back to Frank",
+    "checked": true
+  },
+  "243|Route back to Frank|route": {
+    "name": " ",
+    "checked": false
+  },
+  "243|Unlocking Frank's Handcuffs|sound": {
+    "name": " Assisting Frank",
+    "checked": true
+  },
+  "243|Route back to Frank's Family|route": {
+    "name": " ",
+    "checked": false
+  },
+  "243|Family Reunited|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "243|Tickets Collected|item": {
+    "name": " ",
+    "checked": false
+  },
+  "243|Farewell|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-245": {
+    "name": "Collecting the documents",
+    "checked": true
+  },
+  "245|Route to the Bank|route": {
+    "name": " ",
+    "checked": false
+  },
+  "245|Bank|sound": {
+    "name": "Returning to Salieri Bar",
+    "checked": true
+  },
+  "245|Documents Collected|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "245|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "245|Route to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "245|Lucas Assignment|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-260": {
+    "name": " ",
+    "checked": false
+  },
+  "260|Route to Big Stan|route": {
+    "name": " ",
+    "checked": false
+  },
+  "260|Lesson Taught|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "260|Route back to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "260|Reporting to Lucas: start|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "260|Reporting to Lucas: end|cutscene end": {
+    "name": " ",
+    "checked": false
+  },
+  "260|Reporting to Lucas|cutscene end": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-263": {
+    "name": " ",
+    "checked": false
+  },
+  "263|Route to the Thor 810 Sedan FWD|route": {
+    "name": " ",
+    "checked": false
+  },
+  "263|Thor 810 Sedan FWD|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "263|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-265": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "checkpoint-270": {
+    "name": " ",
+    "checked": false
+  },
+  "270|On the Way to Pick up Salvatore|location": {
+    "name": "Going to Salvatore",
+    "checked": true
+  },
+  "270|Route to Salvatore|route": {
+    "name": " ",
+    "checked": false
+  },
+  "270|Picking up Salvatore|sound": {
+    "name": "Going to the villa",
+    "checked": true
+  },
+  "270|Picking up Salvatore|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "270|Route to the Villa|route": {
+    "name": " ",
+    "checked": false
+  },
+  "270|Reaching the Villa|sound": {
+    "name": " Getting Inside",
+    "checked": true
+  },
+  "checkpoint-275": {
+    "name": "Villa",
+    "checked": true
+  },
+  "275|Route to the Safe|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-277": {
+    "name": " Escape",
+    "checked": true
+  },
+  "277|Route to the Exit|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-280": {
+    "name": "Returning to Salieri bar",
+    "checked": true
+  },
+  "280|Route to Salvatore's Home|route": {
+    "name": " ",
+    "checked": false
+  },
+  "280|Dropping off Salvatore|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "280|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "280|On the Way to Salieri Bar|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-285": {
+    "name": "Parking lot",
+    "checked": true
+  },
+  "checkpoint-290": {
+    "name": " ",
+    "checked": false
+  },
+  "290|Gangsters Dead|sound": {
+    "name": " Leaving",
+    "checked": true
+  },
+  "290|Bolt Model B Pickup|car": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-295": {
+    "name": "Chase",
+    "checked": true
+  },
+  "295|Route to the Warehouse|route": {
+    "name": " ",
+    "checked": false
+  },
+  "295|On the Way to the Warehouse|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-300": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-310": {
+    "name": "Going to the restaurant",
+    "checked": true
+  },
+  "310|Route to Pepe's restaurant|route": {
+    "name": " ",
+    "checked": false
+  },
+  "310|On the Way to the Restaurant|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-315": {
+    "name": "Pepe's restaurant",
+    "checked": true
+  },
+  "checkpoint-320": {
+    "name": "Going to Carlo",
+    "checked": true
+  },
+  "320|Route to Carlo|route": {
+    "name": " ",
+    "checked": false
+  },
+  "320|On the Way to Carlo|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-325": {
+    "name": "Carlo",
+    "checked": true
+  },
+  "checkpoint-330": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "330|Route to Ralphie|route": {
+    "name": " ",
+    "checked": false
+  },
+  "330|Ralphie: start|sound": {
+    "name": " Learning how to unlock Crusader Chromium",
+    "checked": true
+  },
+  "330|Ralphie: end|item": {
+    "name": " Departure",
+    "checked": true
+  },
+  "checkpoint-335": {
+    "name": "Going to the docks",
+    "checked": true
+  },
+  "335|Route to the Docks|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-340": {
+    "name": "Party",
+    "checked": true
+  },
+  "340|Politician Dead|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-345": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "345|Vincenzo: start|cutscene start": {
+    "name": " Vincenzo",
+    "checked": true
+  },
+  "345|Vincenzo: end|cutscene end": {
+    "name": " Going to Ralphie",
+    "checked": true
+  },
+  "345|Ralphie: end|item": {
+    "name": " Departure",
+    "checked": true
+  },
+  "checkpoint-350": {
+    "name": "Phone Booth",
+    "checked": true
+  },
+  "350|Route to the Phone Booth|route": {
+    "name": " ",
+    "checked": false
+  },
+  "350|Phone Booth|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "350|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-355": {
+    "name": "Fireworks",
+    "checked": true
+  },
+  "checkpoint-360": {
+    "name": " ",
+    "checked": false
+  },
+  "360|On the Way to the Car|location": {
+    "name": " On the Way to the Car",
+    "checked": true
+  },
+  "360|Route to the Car|route": {
+    "name": " ",
+    "checked": false
+  },
+  "360|Car Reached|sound": {
+    "name": " Smoke break",
+    "checked": true
+  },
+  "360|Planting the Bomb|sound": {
+    "name": " Planting the bomb",
+    "checked": true
+  },
+  "checkpoint-370": {
+    "name": "Going to Rainbow Garden restaurant",
+    "checked": true
+  },
+  "370|Route to Rainbow Garden|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-372": {
+    "name": " Escape",
+    "checked": true
+  },
+  "372|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-375": {
+    "name": "Sergio Chase",
+    "checked": true
+  },
+  "375|Route to the Port|route": {
+    "name": " ",
+    "checked": false
+  },
+  "375|Sergio chase in Progress|location": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-380": {
+    "name": "Harbor",
+    "checked": true
+  },
+  "checkpoint-385": {
+    "name": " Killing Sergio",
+    "checked": true
+  },
+  "checkpoint-390": {
+    "name": " ",
+    "checked": false
+  },
+  "390|Route from the Port to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "390|On the Way to Salieri Bar|location": {
+    "name": "Returning to Salieri Bar",
+    "checked": true
+  },
+  "390|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "390|Route to the Bolt-Thrower|route": {
+    "name": " ",
+    "checked": false
+  },
+  "390|Bolt-Thrower|car": {
+    "name": " ",
+    "checked": false
+  },
+  "390|Route Bolt-Thrower -> Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "390|Lucas Assignment|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-405": {
+    "name": " ",
+    "checked": false
+  },
+  "405|Route to the Wounded Man|route": {
+    "name": " ",
+    "checked": false
+  },
+  "405|Wounded Man Reached|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "405|Route to the Doctor|route": {
+    "name": " ",
+    "checked": false
+  },
+  "405|Wounded Man Saved|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "405|Route back to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "405|Reporting to Lucas|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-407": {
+    "name": " ",
+    "checked": false
+  },
+  "407|Route to the Bruno Speedster 851|route": {
+    "name": " ",
+    "checked": false
+  },
+  "407|Bruno Speedster 851|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "407|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-410": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "410|Vincenzo: start|cutscene start": {
+    "name": " Vincenzo",
+    "checked": true
+  },
+  "410|Vincenzo: end|cutscene end": {
+    "name": " Departure",
+    "checked": true
+  },
+  "checkpoint-415": {
+    "name": "City",
+    "checked": true
+  },
+  "415|Route to the Bolt-Thrower|route": {
+    "name": " ",
+    "checked": false
+  },
+  "415|Bolt-Thrower|car": {
+    "name": " ",
+    "checked": false
+  },
+  "415|Route to the Theatre|route": {
+    "name": " ",
+    "checked": false
+  },
+  "415|Route to the Theatre (MR)|route": {
+    "name": " ",
+    "checked": false
+  },
+  "415|Chase start|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "415|Route to the Countryside|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-425": {
+    "name": "Manhunt",
+    "checked": true
+  },
+  "checkpoint-430": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-435": {
+    "name": "Returning to Salieri Bar",
+    "checked": true
+  },
+  "435|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "435|Salieri Bar|location": {
+    "name": " ",
+    "checked": false
+  },
+  "435|Route to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "435|Lucas Assignment|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-450": {
+    "name": " ",
+    "checked": false
+  },
+  "450|Route to the Cliffs|route": {
+    "name": " ",
+    "checked": false
+  },
+  "450|Car Dumped|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "450|Route back to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "450|Reporting to Lucas|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-452": {
+    "name": " ",
+    "checked": false
+  },
+  "452|Route to the Celeste Marque 500|route": {
+    "name": " ",
+    "checked": false
+  },
+  "452|Celeste Marque 500|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "452|Route to Saliri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-455": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "455|Route to Ralphie|route": {
+    "name": " ",
+    "checked": false
+  },
+  "455|Ralphie: start|sound": {
+    "name": " Going to Vincenzo",
+    "checked": true
+  },
+  "455|Vincenzo: start|cutscene start": {
+    "name": " Vincenzo",
+    "checked": true
+  },
+  "455|Vincenzo: end|cutscene end": {
+    "name": " Going back to Ralphie",
+    "checked": true
+  },
+  "455|Ralphie: end|sound": {
+    "name": " Departure",
+    "checked": true
+  },
+  "checkpoint-460": {
+    "name": "Going to the prison",
+    "checked": true
+  },
+  "460|Route to the Prison|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-465": {
+    "name": "Prison",
+    "checked": true
+  },
+  "465|Out of the Sewer|cutscene end": {
+    "name": " ",
+    "checked": true
+  },
+  "465|Large Room|sound": {
+    "name": " ",
+    "checked": true
+  },
+  "465|Small Room|sound": {
+    "name": " ",
+    "checked": true
+  },
+  "checkpoint-466": {
+    "name": " Assassination",
+    "checked": true
+  },
+  "466|Politician dead|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "466|Route to the Gate|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-470": {
+    "name": "Returning to Salieri bar",
+    "checked": true
+  },
+  "470|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "470|Route to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "470|Lucas Assignment|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-485": {
+    "name": " ",
+    "checked": false
+  },
+  "485|Route to Lucas' Friend|route": {
+    "name": " ",
+    "checked": false
+  },
+  "485|Picking up Lucas' Friend|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "485|Route back to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "485|Reporting to Lucas|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-487": {
+    "name": " ",
+    "checked": false
+  },
+  "487|Route to the Lassiter V16 Appolyon|route": {
+    "name": " ",
+    "checked": false
+  },
+  "487|Lassiter V16 Appolyon|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "487|Route to Salieri Bar|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-490": {
+    "name": "Salieri bar",
+    "checked": true
+  },
+  "490|Route to Vincenzo|route": {
+    "name": " ",
+    "checked": false
+  },
+  "490|Vincenzo: start|cutscene start": {
+    "name": " Vincenzo",
+    "checked": true
+  },
+  "490|Vincenzo: end|cutscene end": {
+    "name": " Departure",
+    "checked": true
+  },
+  "checkpoint-495": {
+    "name": "Going to the port",
+    "checked": true
+  },
+  "495|Route to the Truck|route": {
+    "name": " ",
+    "checked": false
+  },
+  "495|Documents Collected|item": {
+    "name": " ",
+    "checked": false
+  },
+  "495|Bolt Truck|car": {
+    "name": " The skip",
+    "checked": true
+  },
+  "495|Route to the Skip|route": {
+    "name": " ",
+    "checked": false
+  },
+  "495|Port Entrance|sound": {
+    "name": " Port entrance",
+    "checked": true
+  },
+  "checkpoint-497": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-500": {
+    "name": "Port",
+    "checked": true
+  },
+  "checkpoint-505": {
+    "name": "Escape",
+    "checked": true
+  },
+  "505|Route to the Rendezvous Point|route": {
+    "name": " ",
+    "checked": false
+  },
+  "505|Rendezvous Point|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "505|Route to the Warehouse|route": {
+    "name": " ",
+    "checked": false
+  },
+  "505|On the Way to the Warehouse 1|location": {
+    "name": " ",
+    "checked": false
+  },
+  "505|On the Way to the Warehouse 2|location": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-510": {
+    "name": "Paulie's flat",
+    "checked": true
+  },
+  "checkpoint-515": {
+    "name": "Train",
+    "checked": true
+  },
+  "515|Route to the Bank|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-520": {
+    "name": "Reconnaissance",
+    "checked": true
+  },
+  "520|Dialog 1: start|sound": {
+    "name": " Dialog 1",
+    "checked": true
+  },
+  "520|Dialog 1: end|sound": {
+    "name": " Going out",
+    "checked": true
+  },
+  "520|Dialog 2: start|sound": {
+    "name": " Dialog 2",
+    "checked": true
+  },
+  "520|Dialog 2: end|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-525": {
+    "name": "Getting the weapons",
+    "checked": true
+  },
+  "525|Route to Yellow Pete|route": {
+    "name": " ",
+    "checked": false
+  },
+  "moon-pete-start": {
+    "name": "Picking up Paulie",
+    "checked": true
+  },
+  "moon-pete-end": {
+    "name": " ",
+    "checked": false
+  },
+  "525|Route to Paulie's Apartment|route": {
+    "name": " ",
+    "checked": false
+  },
+  "moon-to-paulie": {
+    "name": " ",
+    "checked": true
+  },
+  "moon-paulie": {
+    "name": "Going to the bank",
+    "checked": true
+  },
+  "moon-route-to-bank": {
+    "name": " ",
+    "checked": false
+  },
+  "moon-to-bank": {
+    "name": " ",
+    "checked": true
+  },
+  "525|Route to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "525|Lucas Assignment|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-530": {
+    "name": " ",
+    "checked": false
+  },
+  "530|Route to Big Dick|route": {
+    "name": " ",
+    "checked": false
+  },
+  "530|Big Dick: start|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "530|Big Dick: end|cutscene end": {
+    "name": " ",
+    "checked": false
+  },
+  "530|Big Dick|cutscene end": {
+    "name": " ",
+    "checked": false
+  },
+  "530|Big Dick 2: start|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "530|Big Dick 2: end|cutscene end": {
+    "name": " ",
+    "checked": false
+  },
+  "530|Big Dick 2|cutscene end": {
+    "name": " ",
+    "checked": false
+  },
+  "530|Route back to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "530|Reporting to Lucas|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-532": {
+    "name": " ",
+    "checked": false
+  },
+  "532|Route to the Trautenberg Model J|route": {
+    "name": " ",
+    "checked": false
+  },
+  "532|Trautenberg Model J|car": {
+    "name": " ",
+    "checked": false
+  },
+  "532|Route to Paulie's Apartment|route": {
+    "name": " ",
+    "checked": false
+  },
+  "532|Route to the Bank|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-535": {
+    "name": "Bank Heist",
+    "checked": true
+  },
+  "535|Vault|objective": {
+    "name": " ",
+    "checked": false
+  },
+  "535|Leaving the Bank|sound": {
+    "name": " Leaving the bank",
+    "checked": true
+  },
+  "checkpoint-540": {
+    "name": "Escape",
+    "checked": true
+  },
+  "540|Route to Twister|route": {
+    "name": " ",
+    "checked": false
+  },
+  "540|Approaching Twister|sound": {
+    "name": " Twister",
+    "checked": true
+  },
+  "540|Final dialog: start|cutscene start": {
+    "name": " Final dialog",
+    "checked": true
+  },
+  "checkpoint-545": {
+    "name": "City",
+    "checked": true
+  },
+  "545|Schubert Extra Six Tudor|car": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-550": {
+    "name": " ",
+    "checked": false
+  },
+  "550|Route from Paulie's Flat to the Gallery|route": {
+    "name": " ",
+    "checked": false
+  },
+  "DoA-to-gallery": {
+    "name": " ",
+    "checked": true
+  },
+  "DoA-route-to-pete": {
+    "name": " ",
+    "checked": false
+  },
+  "DoA-pete": {
+    "name": " ",
+    "checked": false
+  },
+  "route-pete-gallery": {
+    "name": " ",
+    "checked": false
+  },
+  "550|Route from Paulie's Flat to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "550|Lucas Assignment|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-555": {
+    "name": " ",
+    "checked": false
+  },
+  "555|Route to Hotel Corleone|route": {
+    "name": " ",
+    "checked": false
+  },
+  "555|Hotel Corleone|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "555|Hideout Found|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "555|Route back to Lucas|route": {
+    "name": " ",
+    "checked": false
+  },
+  "555|Reporting to Lucas|sound": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-557": {
+    "name": " ",
+    "checked": false
+  },
+  "557|Route to the Thor 812 Cabriolet FWD|route": {
+    "name": " ",
+    "checked": false
+  },
+  "557|Thor 812 Cabriolet FWD|car": {
+    "name": " ",
+    "checked": false
+  },
+  "557|Route to the Gallery|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-560": {
+    "name": "Gallery",
+    "checked": true
+  },
+  "560|Route to Sam Chase|route": {
+    "name": " ",
+    "checked": false
+  },
+  "560|Chasing Sam|sound": {
+    "name": " Chasing Sam",
+    "checked": true
+  },
+  "560|Route to Sam|route": {
+    "name": " ",
+    "checked": false
+  },
+  "checkpoint-561": {
+    "name": " Killing Sam",
+    "checked": true
+  }
+}

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html style="height: 100%; font-family: arial; font-size: 16px; background: black; color: white">
+  <head>
+    <style>
+      .headerRow { display: flex; margin: .5rem 0 }
+      #missions table { width: 100%; background: #001100; padding: .5rem; border-radius: 0 0 .25rem .25rem; margin: 1rem 0; border-collapse: collapse }
+      caption { background: #001500; border-radius: .25rem .25rem 0 0; padding: .5rem }
+      tr.detailedSplit td:first-child { padding-left: 2rem }
+      #missions tr td:first-child { width: 25rem; box-sizing: border-box; padding-left: .5rem; }
+      #missions tr td:last-child { display: flex; align-items: center }
+      tr.activeRow { background: #112211 }
+      .splitName { width: 20rem }
+      .hidden { display: none }
+      .status { width: 30rem; color: darkred }
+      .recommendedCategory { background: darkgreen }
+      .notRecommendedCategory { background: darkred }
+      .unavailableCategory { background: gray }
+      .recommendedCategory, .notRecommendedCategory, .unavailableCategory, .typeLabel { display: inline-block; margin: 0 .0625rem; padding: 0 .125rem; font-size: .75rem; border-radius: .125rem; cursor: default }
+      .categoryCheckbox { margin-left: .75rem }
+      .typeLabel { background: mediumblue }
+      input[type="checkbox"]:not(:checked) + .splitName { background: #999 }
+      a { color: gold }
+      .pre-made-splits th:first-child { text-align: right }
+      .pre-made-splits td { display: table-cell; padding: .25rem 1rem; font-size: 0; text-align: center }
+      .pre-made-splits td:first-child { font-size: 1rem }
+      .pre-made-splits a { padding: 0 .125rem; font-size: 1rem }
+      .individual-levels td { white-space: nowrap; padding: 0 }
+    </style>
+  </head>
+  <body style="margin: 0">
+    <div style="width: 62rem; margin: 0 auto; padding-bottom: 2rem">
+      <div style="position: fixed; background: rgba(0, 0, 0, .95)">
+        <div class="headerRow">
+          <div style="width: 16rem">Autosplitter file (.asl)</div>
+          <div style="width: 16rem">
+            <input type='file' id='autosplitterFile' />
+          </div>
+          <div class="status" id="autosplitterFileStatus"></div>
+        </div>
+        <div class="autosplitterFileRequired hidden">
+          <div class="headerRow">
+            <div style="width: 16rem">Split tables</div>
+            <div style="display: flex; width: 16rem">
+              <input type='file' id='splitTableFile' style="width: 12rem" />
+              <button id="saveSplitTables">Save</button>
+            </div>
+            <div class="status" id="splitTableFileStatus"></div>
+          </div>
+          <div class="headerRow">
+            <div style="width: 16rem">Layout file (.lsl)</div>
+            <div style="display: flex; width: 16rem">
+              <input type='file' id='layoutFile' style="width: 12rem" /><button id="saveLayoutFile">Save</button>
+            </div>
+            <div class="status" id="layoutFileStatus"></div>
+          </div>
+          <div class="headerRow">
+            <div style="width: 16rem"></div>
+            <div style="width: 16rem">
+              <button id="generateSplitFile">Generate split file</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="autosplitterFileRequired hidden" style="width: 61rem; margin: 12rem auto 4rem auto">
+      <input id="categoryName" style="width: 16rem"/> Category name<br/>
+      <input type="checkbox" id="bertoneRequired"/> <label for="bertoneRequired">Bertone% run - Don't split next mission unless Bertone task is finished</label>
+      <div id="missions"></div>
+    </div>
+    <div style="width: 50rem; margin: 0 auto; padding: 12rem 0 4rem 0; line-height: 1.5">
+      <h1>Mafia Autosplitter Setup</h1>
+      <p>To set up an autosplitter for Mafia speedruns you need to get either</p>
+      <ol>
+        <li>the official per-mission one, <a href="https://www.youtube.com/watch?v=BnWGnK49urU&t=870s">which is easy to set up</a>,</li>
+        <li>the per-checkpoint one, which is <a href="https://www.youtube.com/watch?v=E2ChgKtdsh8">slightly more difficult to set up</a>, or</li>
+        <li>the fine-grained one you'll find out how to set up if you keep reading.</li>
+      </ol>
+      
+      <h2>Fine-grained Mafia autosplitter</h2>
+      
+      <p>The newest version of the autosplitter allows you to split not just per checkpoint but also at certain events during your run.</p>
+      <p>If you haven't already <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/autosplitter.asl">download the autosplitter script</a>. It doesn't matter where you store the file.
+      
+      <h3>Using pre-made splits and layouts</h3>
+      
+      <p>If you aren't too picky when it comes to which events should trigger splits and you are okay with using pre-made splits then setting up the splitter is easy:</p>
+      
+      <ol>
+        <li>Download your split and layout file from the tables below depending on the category you want to speedrun and how detailed the splits should be</li>
+        <li>Open the split (.lss) file you just downloaded in LiveSplit.</li>
+        <li>Right click the splits, <em>Open Layout -> From File...</em> and select the layout (.lsl) file you just downloaded.</li>
+        <li>Right click the splits again, <em>Edit Layout</em>, double click <em>Scriptable Auto Splitter</em>. There you need to click the <em>Browse</em> button and select the auto splitter script (.asl) file. Close both windows when you're done. 
+        <li>Right click the splits again and select <em>Save Layout</em> to make sure you won't lose the changes you just made.</li>
+      </ol>
+      
+      <h4>Full run splits</h4>
+      
+      <table class="pre-made-splits">
+        <tr>
+          <th></th>
+          <th>Vanilla<span style="color: red">*</span></th>
+          <th>Speedrun Mod</th>
+          <th>Chaos Mod</th>
+        </tr>
+        <tr>
+          <th>Realistic SoB (Any%, Bertone%, MasterRace%)</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-layout.lsl">layout</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-layout.lsl">layout</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-layout.lsl">layout</a>
+          </td>
+        </tr>
+        <tr>
+          <th>Any% Detailed</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-layout.lsl">layout</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-layout.lsl">layout</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/chaos-mod/mafia-chaos-any-detailed-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/chaos-mod/mafia-chaos-any-detailed-layout.lsl">layout</a>
+          </td>
+        </tr>
+        <tr>
+          <th>Bertone% Detailed</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-layout.lsl">layout</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-layout.lsl">layout</a>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>MasterRace% Detailed</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/masterrace-detailed/mafia-vanilla-masterrace-detailed-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/masterrace-detailed/mafia-vanilla-masterrace-detailed-layout.lsl">layout</a>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Any% Progress</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-layout.lsl">layout</a>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Bertone% Progress</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits.lss">splits</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-layout.lsl">layout</a>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      
+      <h4>Individual level splits</h4>
+      
+      <table class="pre-made-splits individual-levels">
+        <tr>
+          <th></th>
+          <th>Any% Detailed</th>
+          <th>Bertone% Detailed</th>
+          <th>Realistic SoB</th>
+          <th>Any% Progress</th>
+          <th>Bertone% Progress</th>
+        </tr>
+        <tr>
+          <th style="white-space: nowrap">1. An Offer You Can't Refuse</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-01.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-01.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-01.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-01.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-01.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-01.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-01.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-01.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>2. Running Man</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-02.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-02.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-02.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-02.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-02.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-02.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-02.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-02.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>3. Molotov Party</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-03.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-03.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-03.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-03.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-03.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-03.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-03.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-03.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>4. Ordinary Routine</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-04.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-04.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-04.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-04.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-04.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-04.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-04.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-04.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>5. Fairplay</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-05.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-05.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-05.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-05.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-05.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-05.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-05.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-05.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>6. Sarah</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-06.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-06.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-06.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-06.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-06.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-06.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-06.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-06.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>7. Better Get Used to it</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-07.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-07.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-07.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-07.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-07.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-07.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-07.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-07.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>8. The Whore</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-08.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-08.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-08.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-08.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-08.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-08.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-08.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-08.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>9. The Priest</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-09.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-09.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-09.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-09.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-09.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-09.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-09.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-09.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>10. A Trip To The Country</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-10.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-10.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-10.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-10.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-10.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-10.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-10.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-10.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>11. Omerta</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-11.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-11.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-11.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-11.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-11.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-11.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-11.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-11.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>12. Visiting Rich People</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-12.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-12.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-12.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-12.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-12.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-12.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-12.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-12.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>13. A Great Deal!</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-13.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-13.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-13.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-13.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-13.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-13.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-13.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-13.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>14. Bon Appétit!</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-14.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-14.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-14.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-14.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-14.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-14.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-14.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-14.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>15. Happy Birthday!</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-15.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-15.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-15.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-15.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-15.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-15.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-15.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-15.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>16. You Lucky Bastard!</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-16.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-16.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-16.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-16.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-16.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-16.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-16.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-16.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>17. Crème De La Crème</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-17.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-17.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-17.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-17.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-17.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-17.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-17.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-17.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>18. Election Campaign</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-18.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-18.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-18.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-18.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-18.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-18.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-18.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-18.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>19. Just For Relaxation</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-19.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-19.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-19.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-19.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-19.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-19.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-19.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-19.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>20. Moonlighting</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-20.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-20.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-20.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-20.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-20.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-20.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-20.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-20.lss">vanilla</a></td>
+        </tr>
+        <tr>
+          <th>21. The Death Of Art</th>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-splits-mission-21.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-splits-mission-21.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-splits-mission-21.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-splits-mission-21.lss">SM</a>
+          </td>
+          <td>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-splits-mission-21.lss">vanilla</a>
+            <a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-splits-mission-21.lss">SM</a>
+          </td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-splits-mission-21.lss">vanilla</a></td>
+          <td><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-splits-mission-21.lss">vanilla</a></td>
+        </tr>
+      </table>
+      
+      <p>If in step 1 you saved the autosplitter to <code>C:\mafia-autosplitter\autosplitter.asl</code> then feel free to skip steps 4 and 5. Note that splits and layout files come in pairs. Always use the correct layout file or your splits won't work correctly. You can customize the layout any way you want but don't change the autosplitter settings. <strong>IMPORTANT: If you use multiple different splits always make sure that not just the correct split file but also the correct layout file is loaded in livesplit by repeating steps 2 and 3 above before you start your run.</strong> All layout files in the table above were created with LiveSplit 1.8.16</p>
+      <p><span style="color: red">*</span> Official version of the game or OHKO mod</p>
+      
+      <h4>Progress splits</h4>
+      
+      <p>You might have noticed there are so-called <em>Progress</em> splits in the tables above. They are not meant to be a replacement for your primary splits but rather an interesting addition. Basically you would use <em>Realistic SoB</em> or <em>Detailed</em> splits as your primary splits and <em>Progress</em> splits in a separate LiveSplit window. Once you finish at least one run <em>Progress</em> splits can show you live prediction of your final time. The predicted time would change all the time without the need to finish a segment in your primary splits. Say you are driving somewhere and you need to slow down because of cops. The moment you start slowing down the predicted time would start increasing. This works by splitting all usual routes into many pieces, each having its own segment in LiveSplit. For this reason you should not show the splits in your layout.</p>
+
+      <h3>Custom split events</h3>
+      
+      <p>The steps described above are all you need to do to successfully set up your splits. But if you want to selectively choose which events should trigger splits to suit your needs better then you can do that too. This option is more complicated though. In particular, you need to</p>
+      
+      <ol>
+        <li>Select the autosplitter (.asl) file using the <em>Choose File</em> button at the top of the page. Split tables should appear where you can select which split events you want to get triggered and what names the splits should use.</li>
+        <li>
+          <p>Split tables can be saved and loaded to and from <em>json</em> files using the <em>Choose File</em> and <em>Save</em> buttons above.<p>
+          <p>You can also load pre-existing split tables to save some time:</p>
+          <ul>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-detailed/mafia-vanilla-any-detailed-split-tables.json">Vanilla<span style="color: red">*</span> Any% Detailed</a>,</li>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-detailed/mafia-vanilla-bertone-detailed-split-tables.json">Vanilla<span style="color: red">*</span> Bertone% Detailed</a>,</li>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/masterrace-detailed/mafia-vanilla-masterrace-detailed-split-tables.json">Vanilla<span style="color: red">*</span> MasterRace% Detailed</a>,</li>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/realistic-sob/mafia-vanilla-realistic-sob-split-tables.json">Vanilla<span style="color: red">*</span> Realistic SoB (both Any% and Bertone%)</a>,</li>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/any-detailed/mafia-sm-any-detailed-split-tables.json">Speedrun Mod Any% Detailed</a>,</li>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/bertone-detailed/mafia-sm-bertone-detailed-split-tables.json">Speedrun Mod Bertone% Detailed</a>,</li>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/speedrun-mod/realistic-sob/mafia-sm-realistic-sob-split-tables.json">Speedrun Mod Realistic SoB (both Any% and Bertone%)</a>,</li>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/chaos-mod/mafia-chaos-any-detailed-split-tables.json">Chaos Mod Any% Detailed</a>,</li>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/any-progress/mafia-vanilla-any-progress-split-tables.json">Vanilla<span style="color: red">*</span> Any% Progress</a></li>
+            <li><a href="https://raw.githubusercontent.com/Telatko/mafia-detailed-autosplitter/main/vanilla/bertone-progress/mafia-vanilla-bertone-progress-split-tables.json">Vanilla<span style="color: red">*</span> Bertone% Progress</a></li>
+          </ul>
+          <p><span style="color: red">*</span> Official version of the game or OHKO mod</p>
+          <p>Runners are encouraged to share their custom split tables.</p>
+        </li>
+        <li>Once you are happy with the split tables you can generate your split file using the <em>Generate split file</em> button. Use any of the <em>Generate IL Split File</em> buttons to generate an IL split file.</li>
+        <li>
+          <p>Prepare a layout file. In particular</p>
+          <ul>
+            <li>Open the generated split file in livesplit, right click it and select <em>Edit Layout...</em>.</li>
+            <li>If you use the <em>Splits</em> component drop it and replace it with the <em>List->Subsplits</em> one.</li>
+            <li>Add the <em>Control->Scriptable Auto Splitter</em> component, edit it and select the autosplitter file you downloaded previously.</li>
+            <li>Close both the <em>Layout Settings</em> and <em>Layout Editor</em> windows by clicking the <em>OK</em> button.</li>
+            <li>Right click you splits, select <em>Save Layout As...</em> and store the layout file somewhere.</li>
+          </ul>
+          <p>You can skip this step by using a layout file that already has both the <em>Subsplits</em> and <em>Scriptable Auto Splitter</em> components. For this purpose you can use any of the pre-made layout files above.</p>
+        </li>
+        <li>Select the layout file using the <em>Choose File</em> button and and then click the <em>Save</em> button to save your split table settings into your layout.</li>
+        <li>Right click your splits in livesplit, select <em>Open Layout -> From File...</em> and select the file you just saved.</li>
+      </ol>
+      
+      <p>Please note these steps need to be repeated everytime you want to make any changes to your splits.</p>
+      
+      <p><strong>So why do we need those split tables? Why not just name our splits using the <em>Splits Editor</em> in livesplit and select our split events within the autosplitter settings?</strong></p>
+      
+      <p>You can indeed do that. The only issue is that since this is not the official autosplitter for Mafia we have to use the <em>Scriptable Auto Splitter</em> component in our layout instead of setting it within our split file. This leads to our settings ending up getting saved in the layout instead of the split file. So we would have two different files we would need to keep in sync. Enabling or disabling any split event within the autosplitter settings would require changing your split file too. Split tables allow us to make changes in one place and then regenerate our split and layout files.</p>
+      
+      <h2>Credits</h2>
+      
+      <p>The original autosplitter was created by pitpo, Lembox, pudingus, Wafu and TheShalty. Fine-grained split events, as well as this tool, was created by Telátko.</p>
+      
+      <p><strong>DISCLAIMER.</strong> This is a beta version and may contain bugs. Use on your own responsibility. Testing your setup, as well as binding hotkeys for switching splits on demand, is strongly recommended.</p>
+      
+      <p>Version: 21.8.18</p>
+    </div>
+  </body>
+</html>
+
+<script>
+  const missionTables = document.querySelector('#missions')
+  const layoutFileStatus = document.querySelector('#layoutFileStatus')
+  const autosplitterFileStatus = document.querySelector('#autosplitterFileStatus')
+  const splitPolicy = document.querySelector('#splitPolicy')
+  const lucas = document.querySelector('#lucas')
+  const autosplitterFile = document.querySelector('#autosplitterFile')
+  const layoutFile = document.querySelector("#layoutFile")
+  const autosplitterFileRequired = document.querySelectorAll('.autosplitterFileRequired')
+  const splitTableFile = document.querySelector('#splitTableFile')
+  const bertoneRequired = document.querySelector('#bertoneRequired')
+  const categoryName = document.querySelector("#categoryName")
+
+  autosplitterFile.addEventListener('change', processAutosplitterFile)
+  splitTableFile.addEventListener('change', loadSplitTableFile)
+  document.querySelector('#generateSplitFile').addEventListener('click', generateSplitFile)
+  document.querySelector('#saveLayoutFile').addEventListener('click', saveLayoutFile)
+  layoutFile.addEventListener('change', processLayoutFile)
+  document.querySelector('#saveSplitTables').addEventListener('click', saveSplitTables)
+
+  let layoutDom = null
+  let layoutAutosplitterComponent = null
+  let splitLines = null
+  let currentRow = null
+  
+  function loadSplitTableFile() {
+    const file = splitTableFile.files[0]
+    if (!file) return
+
+    const reader = new FileReader()
+    reader.onload = e => {
+      const json = JSON.parse(reader.result)
+      for (const id in json) {
+        if (id == 'bertone-required')
+          bertoneRequired.checked = json[id]
+        else if (id == 'category-name')
+          categoryName.value = json[id]
+        else {
+          const tr = document.querySelector(`tr[data-id="${id}"]`)
+          if (!tr)
+            continue;
+          tr.querySelector('.splitName').value = json[id].name
+          tr.querySelector('input[type="checkbox"]').checked = json[id].checked
+        }
+      }
+    }
+    reader.readAsText(file)
+  }
+  
+  async function processAutosplitterFile() {
+    autosplitterFileRequired.forEach(elem => elem.classList.add('hidden'))
+    autosplitterFileStatus.innerHTML = ''
+    layoutFileStatus.innerHTML = ''
+    layoutAutosplitterComponent = null
+    splitLines = null
+    layoutDom = null
+
+    await parseAutosplitterFile()
+    if (splitLines && autosplitterFileStatus.innerHTML == '') {
+      autosplitterFileRequired.forEach(elem => elem.classList.remove('hidden'))
+      showMissionTables()
+    }
+  }
+
+  function processLayoutFile() {
+    const file = layoutFile.files[0]
+    if (!file) return
+
+    const reader = new FileReader()
+    reader.onload = e => {
+      layoutDom = (new DOMParser()).parseFromString(e.target.result, 'application/xml')
+      
+      if (layoutDom.firstChild.tagName != 'Layout')
+        return layoutFileStatus.innerHTML = 'This does not appear to be a livesplit layout (.lsl) file'
+      try {
+        layoutAutosplitterComponent = [...layoutDom.querySelectorAll('Layout > Components > Component > Path')].filter(path => path.innerHTML.includes('ScriptableAutoSplit'))[0].parentNode.querySelector('Settings')
+        layoutFileStatus.innerHTML = ''
+      }
+      catch(e) {
+        layoutFileStatus.innerHTML = 'This layout file does not have the scriptable autosplitter component'
+      }
+    }
+    reader.readAsText(file)
+  }
+
+  function parseAutosplitterFile() {
+    return new Promise(resolve => {
+      const file = autosplitterFile.files[0]
+      if (!file)
+        return resolve()
+
+      const reader = new FileReader()
+      reader.onload = e => {
+        let def
+        try {
+          def = reader.result.match(/vars\.splitDefinitions[^;]*/m)[0]
+        }
+        catch {
+          autosplitterFileStatus.innerHTML = 'This does not seem to be the latest version of Mafia autosplitter'
+          return resolve()
+        }
+        splitLines = Array.from(def.matchAll(/new +string\[\] *{ *"([^"]*)" *, *"([^"]*)" *, *"([^"]*)" *, *"([^"]*)" *, *"([^"]*)" *, *"([^"]*)"/g))
+        //prettifyCode()
+        resolve()
+      }
+      reader.readAsText(file)
+    })
+  }
+  
+  function prettifyCode() {
+    const maxlen = [0, 0, 0, 0, 0, 0]
+    for (const line of splitLines) {
+      if (line[2] == 'mission')
+        line[1] = `"${line[1]}"`
+      else if (line[2] == 'scene')
+        line[1] = `  "${line[1]}"`
+      else if (line[2] == 'checkpoint')
+        line[1] = `    "${line[1]}"`
+      else 
+        line[1] = `      "${line[1]}"`
+      for (let i = 0; i < 6; i++) {
+        maxlen[i] = Math.max(maxlen[i], line[i+1].length)
+      }
+    }
+    for (const line of splitLines)
+      for (let i = 0; i < 6; i++)
+        line[i+1] = (i == 0 ? line[1] : `"${line[i+1]}"`).padEnd(maxlen[i]+2, ' ')
+    
+    lines = []
+    for (const line of splitLines)
+      lines.push(`    new string[] { ${line.slice(1, 7).join(', ')} },`)
+    download(`code.txt`, lines.join('\n'))
+  }
+  
+  function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+
+  function saveLayoutFile() {
+    if (layoutAutosplitterComponent === null) return layoutFileStatus.innerHTML = 'No layout file selected'
+    const settings = layoutAutosplitterComponent.querySelector('CustomSettings')
+    const schema = { 'fine-tuned-splits': true, 'bertone-required': bertoneRequired.checked }
+    
+    for (const missionTable of missionTables.childNodes) {
+      schema[`mission-${missionTable.querySelector('caption .missionName').innerHTML}`] = true
+      for (const tr of [...missionTable.querySelectorAll('tr')])
+        schema[tr.getAttribute('data-id')] = tr.querySelector('input[type="checkbox"]').checked
+    }
+    for (const prop in schema) {
+      if (settings.querySelector(`[id="${prop}"]`))
+        settings.querySelector(`[id="${prop}"]`).innerHTML = (schema[prop] ? 'True' : 'False')
+      else if (prop != "checkpoint-0") {
+        const setting = layoutDom.createElement('Setting')
+        settings.appendChild(setting)
+        setting.outerHTML = `<Setting id="${prop}" type="bool">${schema[prop] ? 'True' : 'False'}</Setting>\n`
+      }
+    }
+    download(`mafia-layout.lsl`, new XMLSerializer().serializeToString(layoutDom))
+  }
+
+  function generateSplitFile(event, tables) {
+    const segments = []
+    for (const missionTable of (tables || missionTables.childNodes)) {
+      const rows = [...missionTable.querySelectorAll('tr')].filter(tr => tr.querySelector('input[type="checkbox"]').checked)
+      for (const tr of rows) {
+        const name = tr.querySelector('.splitName').value || ' '
+        const missionName = missionTable.querySelector('caption .missionName').innerHTML
+        const splitName = (tr == rows[rows.length-1] && !tables ? `{${missionName}} ​${name}` : `${tables ? '' : '-'}${name}`)
+        for (let i = 2; i < parseInt(tr.getAttribute('data-times')); i++)
+          segments.push(`<Segment><Name>${tables ? '' : '-'}${name}</Name><Icon/><SplitTimes/><BestSegmentTime/><SegmentHistory/></Segment>\n`)
+        segments.push(`<Segment><Name>${rows.length == 1 ? missionName : splitName}</Name><Icon/><SplitTimes/><BestSegmentTime/><SegmentHistory/></Segment>\n`)
+      }
+    }
+    download(`mafia-splits.lss`, `<?xml version="1.0" encoding="UTF-8"?>
+      <Run version="1.7.0">
+        <GameIcon/>
+        <GameName>Mafia: The City of Lost Heaven</GameName>
+        <CategoryName>${categoryName.value}</CategoryName>
+        <Metadata><Run id=""/><Platform usesEmulator="False"/><Region/><Variables/></Metadata>
+        <Offset>00:00:00</Offset>
+        <AttemptCount>0</AttemptCount>
+        <AttemptHistory/>
+        <Segments>${segments.join('')}</Segments>
+        <AutoSplitterSettings/>
+      </Run>`)
+  }
+  
+  function categoryLabels(categories) {
+    const titles = { 
+      real: 'realistic SOB splits', 
+      detail: 'less realistic but more detailed splits',
+      any: 'Any%',
+      lucas: 'Lucas Bertone%', 
+      mr: ' Master Race', 
+      sm: 'Speedrun Mod',
+      nsm: 'vanilla version of the game and any non-speedrun mod',
+      chaos: 'Chaos Mod',
+      '1.2': '1.2 version of the game'
+    }
+    let labels = ''
+    for(const cat in titles) {
+      if (categories.includes(`#${cat}`))
+        labels += `<div class="unavailableCategory" title="This split event will not work in ${titles[cat]}">${cat}</div>`
+      else {
+        const recommended = ['real'].includes(cat) ? categories.includes(cat) : !categories.includes(`!${cat}`)
+        labels += `<div class="${recommended ? 'recommendedCategory' : 'notRecommendedCategory'}" title="This split event is${recommended ? '' : ' not'} recommended  for ${titles[cat]}">${cat}</div>`
+      }
+    }
+    return labels
+  }
+  
+  function saveSplitTables() {
+    const json = { 'category-name': categoryName.value, 'bertone-required': bertoneRequired.checked }
+    for (const missionTable of missionTables.childNodes)
+      for (const tr of [...missionTable.querySelectorAll('tr')])
+        json[tr.getAttribute('data-id')] = { name: tr.querySelector('.splitName').value || ' ', checked: tr.querySelector('input[type="checkbox"]').checked }
+    download(`mafia-split-tables.json`, JSON.stringify(json, null, 2))
+  }
+
+  function showMissionTables() {
+    if (missionTables.firstChild)
+      return
+    const typeLabels = { 
+      checkpoint: "This event triggers when the game is saved",
+      location: "This event triggers based on your location within the city",
+      timer: "This event triggers when timer appears and begins to count down",
+      sound: 'This event triggers when a particular sound is played',
+      item: 'This event triggers when a particular action is performed',
+      car: 'This event triggers when a particular car model is entered',
+      objective: 'This event triggers when mission objective is changed',
+      timeout: 'This event triggers automatically after a certain time period since the last checkpoint has elapsed',
+      route: 'This event triggers repeatedly as your location gets closer and closer to a certain destination. The route is split into many parts and measured separately based on straight line distance between Tommy and the place he needs to go to. Events of this type are not meant to be used in your primary splits.',
+      'cutscene start': 'This event triggers when a non-skippable cutscene is initiated',
+      'cutscene end': 'This event triggers when a non-skippable cutscene is finished',
+      'race lap': 'This event triggers when a lap is finished during Fairplay race'
+    }
+    var cid = null;
+    let missionTable = null
+    const splitIds = new Set()
+
+    for (const line of splitLines) {
+      const tr = document.createElement('tr')
+      if (line[2] == 'checkpoint')
+        cid = line[4]
+      let cats = null
+      if (!['mission', 'scene'].includes(line[2]))
+        cats = line[3].split(' ')
+      const id = cats ? cats.filter(cat => cat[0] == ':')[0] : null
+      const splitId = id ? id.substr(1) : (line[2] == "checkpoint" ? `checkpoint-${cid}` : `${cid}|${line[1]}|${line[2]}`)
+      if (splitIds.has(splitId))
+        continue
+      splitIds.add(splitId)
+      if (line[2] == "mission") {
+        missionTable = document.createElement('table')
+        missionTables.appendChild(missionTable)
+        missionTable.innerHTML = `<caption><span class="missionName">${line[1]}</span><button style="margin-left: 1rem">Generate IL Split File</button></caption><tbody></tbody>`
+        missionTable.addEventListener('mouseover', event => {
+          if (currentRow)
+            currentRow.classList.remove('activeRow')
+          currentRow = event.toElement.closest('tr')
+          if (currentRow)
+            currentRow.classList.add('activeRow')
+        })
+        missionTable.querySelector('caption button').addEventListener('click', generateSplitFile.bind(null, null, [missionTable]))
+      }
+      else if(line[2] == "checkpoint" || line[2] != "scene") {
+        tr.setAttribute('data-categories', (line[4] && line[2] == "checkpoint" && `${line[4]} checkpoint`) || line[4])
+        const disabled = (cid == 0 && line[2] == "checkpoint" ? 'disabled="disabled"' : '')
+        const splitName = `${line[2] == 'checkpoint' ? '' : ' '}${line[1]}`
+        tr.innerHTML = `<td>${line[1]} <div class="typeLabel" title="${typeLabels[line[2]]}">${line[2]}</td></td><td>${categoryLabels(cats)}<input type="checkbox" title="Should this event be part of your splits?" ${cats.includes('real') ? 'checked="checked"' : ''} ${disabled}/><input class="splitName" title="How should be the split called?" value="${splitName}"/></td>`
+        tr.setAttribute('data-id', splitId)
+        tr.setAttribute('data-times', line[2] == "route" ? line[4].split(' ')[5] : 1);
+        if (line[2] != 'checkpoint')
+          tr.classList.add('detailedSplit')
+      }
+      if(tr.innerHTML != '')
+        missionTable.querySelector('tbody').appendChild(tr)
+    }
+  }
+</script>
