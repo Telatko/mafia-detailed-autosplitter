@@ -5,8 +5,8 @@
       .headerRow { display: flex; margin: .5rem 0 }
       #missions table { width: 100%; background: #001100; padding: .5rem; border-radius: 0 0 .25rem .25rem; margin: 1rem 0; border-collapse: collapse }
       caption { background: #001500; border-radius: .25rem .25rem 0 0; padding: .5rem }
-      tr.detailedSplit td:first-child { padding-left: 2rem }
       #missions tr td:first-child { width: 25rem; box-sizing: border-box; padding-left: .5rem; }
+      #missions tr.detailedSplit td:first-child { padding-left: 2rem }
       #missions tr td:last-child { display: flex; align-items: center }
       tr.activeRow { background: #112211 }
       .splitName { width: 20rem }
@@ -62,7 +62,7 @@
         </div>
       </div>
     </div>
-    <div class="autosplitterFileRequired hidden" style="width: 61rem; margin: 12rem auto 4rem auto">
+    <div class="autosplitterFileRequired hidden" style="width: 64rem; margin: 12rem auto 4rem auto">
       <input id="categoryName" style="width: 16rem"/> Category name<br/>
       <input type="checkbox" id="bertoneRequired"/> <label for="bertoneRequired">Bertone% run - Don't split next mission unless Bertone task is finished</label>
       <div id="missions"></div>
@@ -83,7 +83,7 @@
       
       <h3>Using pre-made splits and layouts</h3>
       
-      <p>If you aren't too picky when it comes to which events should trigger splits and you are okay with using pre-made splits then setting up the splitter is easy:</p>
+      <p>If you aren't too picky when it comes to which events should trigger splits and you are okay with using pre-made splits then setting up the splitter is easy. Please note that these are suitable only for 1.0 version of the game and all languages except Russian.</p>
       
       <ol>
         <li>Download your split and layout file from the tables below depending on the category you want to speedrun and how detailed the splits should be</li>
@@ -602,7 +602,7 @@
       
       <p><strong>DISCLAIMER.</strong> This is a beta version and may contain bugs. Use on your own responsibility. Testing your setup, as well as binding hotkeys for switching splits on demand, is strongly recommended.</p>
       
-      <p>Version: 21.8.18</p>
+      <p>Version: 21.8.30</p>
     </div>
   </body>
 </html>
@@ -810,6 +810,7 @@
       sm: 'Speedrun Mod',
       nsm: 'vanilla version of the game and any non-speedrun mod',
       chaos: 'Chaos Mod',
+      ru: 'Russian version of the game',
       '1.2': '1.2 version of the game'
     }
     let labels = ''
@@ -839,9 +840,8 @@
       checkpoint: "This event triggers when the game is saved",
       location: "This event triggers based on your location within the city",
       timer: "This event triggers when timer appears and begins to count down",
-      sound: 'This event triggers when a particular sound is played',
-      item: 'This event triggers when a particular action is performed',
-      car: 'This event triggers when a particular car model is entered',
+      console: 'This event triggers when particular message appears in the bottom left corner of the screen',
+      subtitles: 'This event triggers when particular line appears in the subtitles',
       objective: 'This event triggers when mission objective is changed',
       timeout: 'This event triggers automatically after a certain time period since the last checkpoint has elapsed',
       route: 'This event triggers repeatedly as your location gets closer and closer to a certain destination. The route is split into many parts and measured separately based on straight line distance between Tommy and the place he needs to go to. Events of this type are not meant to be used in your primary splits.',

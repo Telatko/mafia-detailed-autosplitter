@@ -934,6 +934,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name>- </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name>-Collecting the documents</Name>
       <Icon />
       <SplitTimes>
@@ -1223,15 +1232,6 @@
     </Segment>
     <Segment>
       <Name>- Smoke break</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime />
-      <SegmentHistory />
-    </Segment>
-    <Segment>
-      <Name>- Planting the bomb</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />

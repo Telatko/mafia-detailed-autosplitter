@@ -25,6 +25,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name> </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name>Going to Salvatore</Name>
       <Icon />
       <SplitTimes>

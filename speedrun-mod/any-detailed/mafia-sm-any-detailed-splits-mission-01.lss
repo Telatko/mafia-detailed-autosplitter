@@ -2,7 +2,7 @@
 <Run version="1.7.0">
   <GameIcon />
   <GameName>Mafia: The City of Lost Heaven</GameName>
-  <CategoryName>Speedrun Mod Any%</CategoryName>
+  <CategoryName>Speedrun Mod Any% (detailed)</CategoryName>
   <Metadata>
     <Run id="" />
     <Platform usesEmulator="False">
@@ -16,7 +16,7 @@
   <AttemptHistory />
   <Segments>
     <Segment>
-      <Name>An Offer You Can't Refuse</Name>
+      <Name> </Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />

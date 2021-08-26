@@ -1060,6 +1060,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name> Joe</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name> Going to the hideout</Name>
       <Icon />
       <SplitTimes>

@@ -988,6 +988,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name> </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name> On the Way to the Car</Name>
       <Icon />
       <SplitTimes>
@@ -1673,15 +1682,6 @@
     </Segment>
     <Segment>
       <Name> Smoke break</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime />
-      <SegmentHistory />
-    </Segment>
-    <Segment>
-      <Name> Planting the bomb</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
@@ -4382,6 +4382,15 @@
     </Segment>
     <Segment>
       <Name> Killing Sergio</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name> </Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />

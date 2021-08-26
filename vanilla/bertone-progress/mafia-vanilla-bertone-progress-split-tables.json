@@ -69,7 +69,7 @@
     "name": "Passenger 5",
     "checked": true
   },
-  "25|Dialog end|sound": {
+  "25|Dialog end|subtitles": {
     "name": " Driving",
     "checked": true
   },
@@ -85,7 +85,7 @@
     "name": " ",
     "checked": false
   },
-  "25|Parking Lot|sound": {
+  "25|Parking Lot|subtitles": {
     "name": " Parking lot",
     "checked": true
   },
@@ -113,7 +113,7 @@
     "name": " ",
     "checked": false
   },
-  "40|Bolt-Thrower|car": {
+  "40|Bolt-Thrower|console": {
     "name": "Going to Morello bar",
     "checked": true
   },
@@ -193,7 +193,7 @@
     "name": " Collecting Central Island money",
     "checked": true
   },
-  "55|Central Island Money Collected|sound": {
+  "55|Central Island Money Collected|subtitles": {
     "name": " Going to Hoboken",
     "checked": true
   },
@@ -205,7 +205,7 @@
     "name": " Collecting Hoboken money",
     "checked": true
   },
-  "55|Hoboken Money Collected|sound": {
+  "55|Hoboken Money Collected|subtitles": {
     "name": " Going to countryside",
     "checked": true
   },
@@ -261,11 +261,11 @@
     "name": " Route to the Garage",
     "checked": true
   },
-  "75|Bobby's Hut|sound": {
+  "75|Bobby's Hut|subtitles": {
     "name": " ",
     "checked": false
   },
-  "75|Barrier|sound": {
+  "75|Barrier|subtitles": {
     "name": " ",
     "checked": false
   },
@@ -369,16 +369,16 @@
     "name": " Route to the Lassiter V16 Phaeton",
     "checked": true
   },
-  "115|Route Lassiter V16 -> Salieri bar|route": {
-    "name": " Route Lassiter V16 -> Salieri bar",
-    "checked": true
-  },
   "115|Route from Lucas to Salieri bar|route": {
     "name": " ",
     "checked": false
   },
   "115|Lassiter V16 Phaeton|objective": {
     "name": " ",
+    "checked": true
+  },
+  "115|Route Lassiter V16 -> Salieri bar|route": {
+    "name": " Route Lassiter V16 -> Salieri bar",
     "checked": true
   },
   "checkpoint-125": {
@@ -429,7 +429,7 @@
     "name": " Route to the Chase",
     "checked": true
   },
-  "140|Biff|sound": {
+  "140|Biff|subtitles": {
     "name": " ",
     "checked": false
   },
@@ -453,7 +453,7 @@
     "name": " Route to the Bolt-Thrower",
     "checked": true
   },
-  "150|Bolt-Thrower|car": {
+  "150|Bolt-Thrower|console": {
     "name": "Going to hotel Corleone",
     "checked": true
   },
@@ -461,7 +461,7 @@
     "name": " Route to Hotel Corleone",
     "checked": true
   },
-  "150|Bolt Ace|car": {
+  "150|Bolt Ace|console": {
     "name": " ",
     "checked": false
   },
@@ -593,7 +593,7 @@
     "name": " ",
     "checked": false
   },
-  "205|Lucas Assignment|sound": {
+  "205|Lucas Assignment|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -605,7 +605,7 @@
     "name": " Route to Lucas' Friend",
     "checked": true
   },
-  "220|Tip-off: start|sound": {
+  "220|Tip-off: start|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -617,7 +617,7 @@
     "name": " Route back to Lucas",
     "checked": true
   },
-  "220|Reporting to Lucas: start|sound": {
+  "220|Reporting to Lucas: start|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -625,7 +625,7 @@
     "name": " ",
     "checked": true
   },
-  "220|Unlocking the Car: start|sound": {
+  "220|Unlocking the Car: start|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -673,9 +673,9 @@
     "name": " Interrogation",
     "checked": true
   },
-  "omerta-joe-sound": {
-    "name": " ",
-    "checked": false
+  "omerta-joe-subtitles": {
+    "name": " Joe",
+    "checked": true
   },
   "omerta-joe-location": {
     "name": " Going to the hideout",
@@ -721,7 +721,7 @@
     "name": " Route to Frank's Family",
     "checked": true
   },
-  "243|Meeting Frank's Family|sound": {
+  "243|Meeting Frank's Family|subtitles": {
     "name": " Going back to Frank",
     "checked": true
   },
@@ -729,7 +729,7 @@
     "name": " Route back to Frank",
     "checked": true
   },
-  "243|Unlocking Frank's Handcuffs|sound": {
+  "243|Unlocking Frank's Handcuffs|subtitles": {
     "name": " Leading Frank to reunite with his family",
     "checked": true
   },
@@ -741,7 +741,7 @@
     "name": " Getting the Tickets",
     "checked": true
   },
-  "243|Tickets Collected|item": {
+  "243|Tickets Collected|console": {
     "name": " Going back to Frank's Family",
     "checked": true
   },
@@ -757,7 +757,7 @@
     "name": " Route to the Bank",
     "checked": true
   },
-  "245|Bank|sound": {
+  "245|Bank|subtitles": {
     "name": " Bank",
     "checked": true
   },
@@ -773,7 +773,7 @@
     "name": " Route to Lucas",
     "checked": true
   },
-  "245|Lucas Assignment|sound": {
+  "245|Lucas Assignment|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -793,7 +793,7 @@
     "name": " Route back to Lucas",
     "checked": true
   },
-  "260|Reporting to Lucas: start|sound": {
+  "260|Reporting to Lucas: start|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -827,7 +827,7 @@
   },
   "checkpoint-270": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
   "270|On the Way to Pick up Salvatore|location": {
     "name": "Going to Salvatore",
@@ -837,7 +837,7 @@
     "name": " Route to Salvatore",
     "checked": true
   },
-  "270|Picking up Salvatore|sound": {
+  "270|Picking up Salvatore|subtitles": {
     "name": "Going to the villa",
     "checked": true
   },
@@ -849,7 +849,7 @@
     "name": " Route to the Villa",
     "checked": true
   },
-  "270|Reaching the Villa|sound": {
+  "270|Reaching the Villa|subtitles": {
     "name": " Getting Inside",
     "checked": true
   },
@@ -897,13 +897,13 @@
     "name": " ",
     "checked": false
   },
-  "290|Gangsters Dead|sound": {
+  "290|Gangsters Dead|subtitles": {
     "name": " Leaving",
     "checked": true
   },
-  "290|Bolt Model B Pickup|car": {
+  "290|Bolt Model B Pickup|console": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
   "checkpoint-295": {
     "name": "Chase",
@@ -961,11 +961,11 @@
     "name": " Route to Ralphie",
     "checked": true
   },
-  "330|Ralphie: start|sound": {
+  "330|Ralphie: start|subtitles": {
     "name": " Learning how to unlock Crusader Chromium",
     "checked": true
   },
-  "330|Ralphie: end|item": {
+  "330|Ralphie: end|console": {
     "name": " Departure",
     "checked": true
   },
@@ -997,7 +997,7 @@
     "name": " Going to Ralphie",
     "checked": true
   },
-  "345|Ralphie: end|item": {
+  "345|Ralphie: end|console": {
     "name": " Departure",
     "checked": true
   },
@@ -1023,7 +1023,7 @@
   },
   "checkpoint-360": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
   "360|On the Way to the Car|location": {
     "name": " On the Way to the Car",
@@ -1033,12 +1033,8 @@
     "name": " Route to the Car",
     "checked": true
   },
-  "360|Car Reached|sound": {
+  "360|Car Reached|subtitles": {
     "name": " Smoke break",
-    "checked": true
-  },
-  "360|Planting the Bomb|sound": {
-    "name": " Planting the bomb",
     "checked": true
   },
   "checkpoint-370": {
@@ -1097,7 +1093,7 @@
     "name": " Route to the Bolt-Thrower",
     "checked": true
   },
-  "390|Bolt-Thrower|car": {
+  "390|Bolt-Thrower|console": {
     "name": " ",
     "checked": true
   },
@@ -1105,7 +1101,7 @@
     "name": " Route Bolt-Thrower -> Lucas",
     "checked": true
   },
-  "390|Lucas Assignment|sound": {
+  "390|Lucas Assignment|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1117,7 +1113,7 @@
     "name": " Route to the Wounded Man",
     "checked": true
   },
-  "405|Wounded Man Reached|sound": {
+  "405|Wounded Man Reached|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1125,15 +1121,19 @@
     "name": " Route to the Doctor",
     "checked": true
   },
+  "405|Wounded Man Saved|subtitles": {
+    "name": " Wounded Man Saved",
+    "checked": true
+  },
   "405|Wounded Man Saved|objective": {
     "name": " ",
-    "checked": true
+    "checked": false
   },
   "405|Route back to Lucas|route": {
     "name": " Route back to Lucas",
     "checked": true
   },
-  "405|Reporting to Lucas|sound": {
+  "405|Reporting to Lucas|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1173,7 +1173,7 @@
     "name": " Route to the Bolt-Thrower",
     "checked": true
   },
-  "415|Bolt-Thrower|car": {
+  "415|Bolt-Thrower|console": {
     "name": "Going to the theatre",
     "checked": true
   },
@@ -1217,7 +1217,7 @@
     "name": " Route to Lucas",
     "checked": true
   },
-  "435|Lucas Assignment|sound": {
+  "435|Lucas Assignment|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1237,7 +1237,7 @@
     "name": " Route back to Lucas",
     "checked": true
   },
-  "450|Reporting to Lucas|sound": {
+  "450|Reporting to Lucas|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1265,7 +1265,7 @@
     "name": " Route to Ralphie",
     "checked": true
   },
-  "455|Ralphie: start|sound": {
+  "455|Ralphie: start|subtitles": {
     "name": " Going to Vincenzo",
     "checked": true
   },
@@ -1277,7 +1277,7 @@
     "name": " Going back to Ralphie",
     "checked": true
   },
-  "455|Ralphie: end|sound": {
+  "455|Ralphie: end|subtitles": {
     "name": " Departure",
     "checked": true
   },
@@ -1297,11 +1297,11 @@
     "name": " ",
     "checked": true
   },
-  "465|Large Room|sound": {
+  "465|Large Room|subtitles": {
     "name": " ",
     "checked": true
   },
-  "465|Small Room|sound": {
+  "465|Small Room|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1329,7 +1329,7 @@
     "name": " Route to Lucas",
     "checked": true
   },
-  "470|Lucas Assignment|sound": {
+  "470|Lucas Assignment|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1349,7 +1349,7 @@
     "name": " Route back to Lucas",
     "checked": true
   },
-  "485|Reporting to Lucas|sound": {
+  "485|Reporting to Lucas|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1393,11 +1393,11 @@
     "name": " Route to the Truck",
     "checked": true
   },
-  "495|Documents Collected|item": {
+  "495|Documents Collected|console": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
-  "495|Bolt Truck|car": {
+  "495|Bolt Truck|console": {
     "name": " The skip",
     "checked": true
   },
@@ -1405,7 +1405,7 @@
     "name": " Route to the Skip",
     "checked": true
   },
-  "495|Port Entrance|sound": {
+  "495|Port Entrance|subtitles": {
     "name": " Port entrance",
     "checked": true
   },
@@ -1435,11 +1435,11 @@
   },
   "505|On the Way to the Warehouse 1|location": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
   "505|On the Way to the Warehouse 2|location": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
   "checkpoint-510": {
     "name": "Paulie's flat",
@@ -1457,15 +1457,15 @@
     "name": "Reconnaissance",
     "checked": true
   },
-  "520|Dialog 1: start|sound": {
+  "520|Dialog 1: start|subtitles": {
     "name": " Dialog 1",
     "checked": true
   },
-  "520|Dialog 1: end|sound": {
+  "520|Dialog 1: end|subtitles": {
     "name": " Going out",
     "checked": true
   },
-  "520|Dialog 2: start|sound": {
+  "520|Dialog 2: start|subtitles": {
     "name": " Dialog 2",
     "checked": true
   },
@@ -1513,7 +1513,7 @@
     "name": " Route to Lucas",
     "checked": true
   },
-  "525|Lucas Assignment|sound": {
+  "525|Lucas Assignment|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1525,7 +1525,7 @@
     "name": " Route to Big Dick",
     "checked": true
   },
-  "530|Big Dick: start|sound": {
+  "530|Big Dick: start|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1537,7 +1537,7 @@
     "name": " ",
     "checked": false
   },
-  "530|Big Dick 2: start|sound": {
+  "530|Big Dick 2: start|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1553,7 +1553,7 @@
     "name": " Route back to Lucas",
     "checked": true
   },
-  "530|Reporting to Lucas|sound": {
+  "530|Reporting to Lucas|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1565,7 +1565,7 @@
     "name": " Route to the Trautenberg Model J",
     "checked": true
   },
-  "532|Trautenberg Model J|car": {
+  "532|Trautenberg Model J|console": {
     "name": " ",
     "checked": true
   },
@@ -1585,7 +1585,7 @@
     "name": " Leaving the bank",
     "checked": true
   },
-  "535|Leaving the Bank|sound": {
+  "535|Leaving the Bank|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1597,7 +1597,7 @@
     "name": " Route to Twister",
     "checked": true
   },
-  "540|Approaching Twister|sound": {
+  "540|Approaching Twister|subtitles": {
     "name": " Twister",
     "checked": true
   },
@@ -1609,7 +1609,7 @@
     "name": "City",
     "checked": true
   },
-  "545|Schubert Extra Six Tudor|car": {
+  "545|Schubert Extra Six Tudor|console": {
     "name": " ",
     "checked": false
   },
@@ -1641,7 +1641,7 @@
     "name": " Route from Paulie's Flat to Lucas",
     "checked": true
   },
-  "550|Lucas Assignment|sound": {
+  "550|Lucas Assignment|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1653,11 +1653,11 @@
     "name": " Route to Hotel Corleone",
     "checked": true
   },
-  "555|Hotel Corleone|sound": {
+  "555|Hotel Corleone|subtitles": {
     "name": " ",
     "checked": true
   },
-  "555|Hideout Found|sound": {
+  "555|Hideout Found|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1665,7 +1665,7 @@
     "name": " Route back to Lucas",
     "checked": true
   },
-  "555|Reporting to Lucas|sound": {
+  "555|Reporting to Lucas|subtitles": {
     "name": " ",
     "checked": true
   },
@@ -1677,7 +1677,7 @@
     "name": " Route to the Thor 812 Cabriolet FWD",
     "checked": true
   },
-  "557|Thor 812 Cabriolet FWD|car": {
+  "557|Thor 812 Cabriolet FWD|console": {
     "name": " ",
     "checked": true
   },
@@ -1693,7 +1693,7 @@
     "name": " Route to Sam Chase",
     "checked": true
   },
-  "560|Chasing Sam|sound": {
+  "560|Chasing Sam|subtitles": {
     "name": " Chasing Sam",
     "checked": true
   },

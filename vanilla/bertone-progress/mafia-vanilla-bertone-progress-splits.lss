@@ -31012,6 +31012,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name>- Joe</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name>- Going to the hideout</Name>
       <Icon />
       <SplitTimes>
@@ -37429,6 +37438,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name>- </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name>-Going to Salvatore</Name>
       <Icon />
       <SplitTimes>
@@ -40895,6 +40913,15 @@
     </Segment>
     <Segment>
       <Name>- Leaving</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>- </Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
@@ -45754,6 +45781,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name>- </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name>- On the Way to the Car</Name>
       <Icon />
       <SplitTimes>
@@ -46439,15 +46475,6 @@
     </Segment>
     <Segment>
       <Name>- Smoke break</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime />
-      <SegmentHistory />
-    </Segment>
-    <Segment>
-      <Name>- Planting the bomb</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
@@ -53017,7 +53044,7 @@
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name>- </Name>
+      <Name>- Wounded Man Saved</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
@@ -67138,6 +67165,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name>- </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name>- The skip</Name>
       <Icon />
       <SplitTimes>
@@ -69280,7 +69316,25 @@
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name>{Just For Relaxation} ​ Route to the Warehouse</Name>
+      <Name>- Route to the Warehouse</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>- </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>{Just For Relaxation} ​ </Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />

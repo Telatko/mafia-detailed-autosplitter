@@ -88,15 +88,6 @@
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name> Planting the bomb</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime />
-      <SegmentHistory />
-    </Segment>
-    <Segment>
       <Name>Going to Rainbow Garden restaurant</Name>
       <Icon />
       <SplitTimes>

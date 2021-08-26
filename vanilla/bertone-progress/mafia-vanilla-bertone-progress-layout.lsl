@@ -73,11 +73,11 @@
           <Setting id="20|Passenger 4 Route|route" type="bool">True</Setting>
           <Setting id="20|On the Way to Hoboken|location" type="bool">False</Setting>
           <Setting id="checkpoint-25" type="bool">True</Setting>
-          <Setting id="25|Dialog end|sound" type="bool">True</Setting>
+          <Setting id="25|Dialog end|subtitles" type="bool">True</Setting>
           <Setting id="25|Dialog end|timer" type="bool">False</Setting>
           <Setting id="25|Passenger 5 Route|route" type="bool">True</Setting>
           <Setting id="25|On the Way to Central Island|location" type="bool">False</Setting>
-          <Setting id="25|Parking Lot|sound" type="bool">True</Setting>
+          <Setting id="25|Parking Lot|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-30" type="bool">True</Setting>
           <Setting id="30|Route to Salieri Bar|route" type="bool">True</Setting>
           <Setting id="mission-Molotov Party" type="bool">True</Setting>
@@ -85,7 +85,7 @@
           <Setting id="checkpoint-40" type="bool">False</Setting>
           <Setting id="40|Route to the Bolt-Thrower|route" type="bool">True</Setting>
           <Setting id="40|Bolt-Thrower Easter Egg|location" type="bool">False</Setting>
-          <Setting id="40|Bolt-Thrower|car" type="bool">True</Setting>
+          <Setting id="40|Bolt-Thrower|console" type="bool">True</Setting>
           <Setting id="40|Route from Salieri Bar to Morello's Bar|route" type="bool">False</Setting>
           <Setting id="40|Route Bolt-Thrower -&gt; Morello's Bar|route" type="bool">True</Setting>
           <Setting id="40|Approaching Morello's Bar|location" type="bool">True</Setting>
@@ -106,10 +106,10 @@
           <Setting id="checkpoint-55" type="bool">True</Setting>
           <Setting id="55|Route to Central Island|route" type="bool">True</Setting>
           <Setting id="55|West Marshall Bridge|location" type="bool">True</Setting>
-          <Setting id="55|Central Island Money Collected|sound" type="bool">True</Setting>
+          <Setting id="55|Central Island Money Collected|subtitles" type="bool">True</Setting>
           <Setting id="55|Route to Hoboken|route" type="bool">True</Setting>
           <Setting id="55|Hoboken Shortcut|location" type="bool">True</Setting>
-          <Setting id="55|Hoboken Money Collected|sound" type="bool">True</Setting>
+          <Setting id="55|Hoboken Money Collected|subtitles" type="bool">True</Setting>
           <Setting id="55|Route to Clark's Motel|route" type="bool">True</Setting>
           <Setting id="55|Countryside|location" type="bool">False</Setting>
           <Setting id="checkpoint-60" type="bool">True</Setting>
@@ -124,8 +124,8 @@
           <Setting id="70|Unlocking the Car: end|cutscene end" type="bool">True</Setting>
           <Setting id="checkpoint-75" type="bool">True</Setting>
           <Setting id="75|Route to the Garage|route" type="bool">True</Setting>
-          <Setting id="75|Bobby's Hut|sound" type="bool">False</Setting>
-          <Setting id="75|Barrier|sound" type="bool">False</Setting>
+          <Setting id="75|Bobby's Hut|subtitles" type="bool">False</Setting>
+          <Setting id="75|Barrier|subtitles" type="bool">False</Setting>
           <Setting id="75|Garage: Before Driving|cutscene start" type="bool">True</Setting>
           <Setting id="checkpoint-80" type="bool">True</Setting>
           <Setting id="80|Route to Lucas Bertone|route" type="bool">True</Setting>
@@ -168,16 +168,16 @@
           <Setting id="135|Route to the Bolt-Thrower|route" type="bool">True</Setting>
           <Setting id="checkpoint-140" type="bool">True</Setting>
           <Setting id="140|Route to the Chase|route" type="bool">True</Setting>
-          <Setting id="140|Biff|sound" type="bool">False</Setting>
+          <Setting id="140|Biff|subtitles" type="bool">False</Setting>
           <Setting id="checkpoint-145" type="bool">False</Setting>
           <Setting id="checkpoint-146" type="bool">True</Setting>
           <Setting id="146|Route to the Car|route" type="bool">True</Setting>
           <Setting id="mission-The Whore" type="bool">True</Setting>
           <Setting id="checkpoint-150" type="bool">True</Setting>
           <Setting id="150|Route to the Bolt-Thrower|route" type="bool">True</Setting>
-          <Setting id="150|Bolt-Thrower|car" type="bool">True</Setting>
+          <Setting id="150|Bolt-Thrower|console" type="bool">True</Setting>
           <Setting id="150|Route to Hotel Corleone|route" type="bool">True</Setting>
-          <Setting id="150|Bolt Ace|car" type="bool">False</Setting>
+          <Setting id="150|Bolt Ace|console" type="bool">False</Setting>
           <Setting id="150|On the Way to the Hotel|location" type="bool">False</Setting>
           <Setting id="checkpoint-155" type="bool">True</Setting>
           <Setting id="155|Route to the Church|route" type="bool">True</Setting>
@@ -212,15 +212,15 @@
           <Setting id="205|Route to Salieri Bar|route" type="bool">False</Setting>
           <Setting id="205|Route to Lucas|route" type="bool">True</Setting>
           <Setting id="trip-return" type="bool">False</Setting>
-          <Setting id="205|Lucas Assignment|sound" type="bool">True</Setting>
+          <Setting id="205|Lucas Assignment|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-220" type="bool">True</Setting>
           <Setting id="220|Route to Lucas' Friend|route" type="bool">True</Setting>
-          <Setting id="220|Tip-off: start|sound" type="bool">True</Setting>
+          <Setting id="220|Tip-off: start|subtitles" type="bool">True</Setting>
           <Setting id="220|Tip-off: end|objective" type="bool">True</Setting>
           <Setting id="220|Route back to Lucas|route" type="bool">True</Setting>
-          <Setting id="220|Reporting to Lucas: start|sound" type="bool">True</Setting>
+          <Setting id="220|Reporting to Lucas: start|subtitles" type="bool">True</Setting>
           <Setting id="220|Reporting to Lucas: end|cutscene end" type="bool">True</Setting>
-          <Setting id="220|Unlocking the Car: start|sound" type="bool">True</Setting>
+          <Setting id="220|Unlocking the Car: start|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-223" type="bool">True</Setting>
           <Setting id="223|Route to the Ulver Airstream Fordor|route" type="bool">True</Setting>
           <Setting id="223|Ulver Airstream Fordor|objective" type="bool">True</Setting>
@@ -233,7 +233,7 @@
           <Setting id="checkpoint-230" type="bool">True</Setting>
           <Setting id="230|Route to Joe|route" type="bool">True</Setting>
           <Setting id="230|On the Way to Joe|location" type="bool">True</Setting>
-          <Setting id="omerta-joe-sound" type="bool">False</Setting>
+          <Setting id="omerta-joe-subtitles" type="bool">True</Setting>
           <Setting id="omerta-joe-location" type="bool">True</Setting>
           <Setting id="omerta-to-hideout" type="bool">True</Setting>
           <Setting id="omerta-hideout" type="bool">True</Setting>
@@ -245,25 +245,25 @@
           <Setting id="240|Lobby Cleared: end|cutscene end" type="bool">True</Setting>
           <Setting id="checkpoint-243" type="bool">True</Setting>
           <Setting id="243|Route to Frank's Family|route" type="bool">True</Setting>
-          <Setting id="243|Meeting Frank's Family|sound" type="bool">True</Setting>
+          <Setting id="243|Meeting Frank's Family|subtitles" type="bool">True</Setting>
           <Setting id="243|Route back to Frank|route" type="bool">True</Setting>
-          <Setting id="243|Unlocking Frank's Handcuffs|sound" type="bool">True</Setting>
+          <Setting id="243|Unlocking Frank's Handcuffs|subtitles" type="bool">True</Setting>
           <Setting id="243|Route back to Frank's Family|route" type="bool">True</Setting>
           <Setting id="243|Family Reunited|objective" type="bool">True</Setting>
-          <Setting id="243|Tickets Collected|item" type="bool">True</Setting>
+          <Setting id="243|Tickets Collected|console" type="bool">True</Setting>
           <Setting id="243|Farewell|objective" type="bool">True</Setting>
           <Setting id="checkpoint-245" type="bool">True</Setting>
           <Setting id="245|Route to the Bank|route" type="bool">True</Setting>
-          <Setting id="245|Bank|sound" type="bool">True</Setting>
+          <Setting id="245|Bank|subtitles" type="bool">True</Setting>
           <Setting id="245|Documents Collected|objective" type="bool">True</Setting>
           <Setting id="245|Route to Salieri Bar|route" type="bool">False</Setting>
           <Setting id="245|Route to Lucas|route" type="bool">True</Setting>
-          <Setting id="245|Lucas Assignment|sound" type="bool">True</Setting>
+          <Setting id="245|Lucas Assignment|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-260" type="bool">True</Setting>
           <Setting id="260|Route to Big Stan|route" type="bool">True</Setting>
           <Setting id="260|Lesson Taught|objective" type="bool">True</Setting>
           <Setting id="260|Route back to Lucas|route" type="bool">True</Setting>
-          <Setting id="260|Reporting to Lucas: start|sound" type="bool">True</Setting>
+          <Setting id="260|Reporting to Lucas: start|subtitles" type="bool">True</Setting>
           <Setting id="260|Reporting to Lucas: end|cutscene end" type="bool">True</Setting>
           <Setting id="260|Reporting to Lucas|cutscene end" type="bool">False</Setting>
           <Setting id="checkpoint-263" type="bool">True</Setting>
@@ -272,13 +272,13 @@
           <Setting id="263|Route to Salieri Bar|route" type="bool">True</Setting>
           <Setting id="mission-Visiting Rich People" type="bool">True</Setting>
           <Setting id="checkpoint-265" type="bool">True</Setting>
-          <Setting id="checkpoint-270" type="bool">False</Setting>
+          <Setting id="checkpoint-270" type="bool">True</Setting>
           <Setting id="270|On the Way to Pick up Salvatore|location" type="bool">True</Setting>
           <Setting id="270|Route to Salvatore|route" type="bool">True</Setting>
-          <Setting id="270|Picking up Salvatore|sound" type="bool">True</Setting>
+          <Setting id="270|Picking up Salvatore|subtitles" type="bool">True</Setting>
           <Setting id="270|Picking up Salvatore|objective" type="bool">False</Setting>
           <Setting id="270|Route to the Villa|route" type="bool">True</Setting>
-          <Setting id="270|Reaching the Villa|sound" type="bool">True</Setting>
+          <Setting id="270|Reaching the Villa|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-275" type="bool">True</Setting>
           <Setting id="275|Route to the Safe|route" type="bool">True</Setting>
           <Setting id="checkpoint-277" type="bool">True</Setting>
@@ -291,8 +291,8 @@
           <Setting id="mission-A Great Deal!" type="bool">True</Setting>
           <Setting id="checkpoint-285" type="bool">True</Setting>
           <Setting id="checkpoint-290" type="bool">False</Setting>
-          <Setting id="290|Gangsters Dead|sound" type="bool">True</Setting>
-          <Setting id="290|Bolt Model B Pickup|car" type="bool">False</Setting>
+          <Setting id="290|Gangsters Dead|subtitles" type="bool">True</Setting>
+          <Setting id="290|Bolt Model B Pickup|console" type="bool">True</Setting>
           <Setting id="checkpoint-295" type="bool">True</Setting>
           <Setting id="295|Route to the Warehouse|route" type="bool">True</Setting>
           <Setting id="295|On the Way to the Warehouse|location" type="bool">False</Setting>
@@ -309,8 +309,8 @@
           <Setting id="mission-Happy Birthday!" type="bool">True</Setting>
           <Setting id="checkpoint-330" type="bool">True</Setting>
           <Setting id="330|Route to Ralphie|route" type="bool">True</Setting>
-          <Setting id="330|Ralphie: start|sound" type="bool">True</Setting>
-          <Setting id="330|Ralphie: end|item" type="bool">True</Setting>
+          <Setting id="330|Ralphie: start|subtitles" type="bool">True</Setting>
+          <Setting id="330|Ralphie: end|console" type="bool">True</Setting>
           <Setting id="checkpoint-335" type="bool">True</Setting>
           <Setting id="335|Route to the Docks|route" type="bool">True</Setting>
           <Setting id="checkpoint-340" type="bool">True</Setting>
@@ -319,17 +319,16 @@
           <Setting id="checkpoint-345" type="bool">True</Setting>
           <Setting id="345|Vincenzo: start|cutscene start" type="bool">True</Setting>
           <Setting id="345|Vincenzo: end|cutscene end" type="bool">True</Setting>
-          <Setting id="345|Ralphie: end|item" type="bool">True</Setting>
+          <Setting id="345|Ralphie: end|console" type="bool">True</Setting>
           <Setting id="checkpoint-350" type="bool">True</Setting>
           <Setting id="350|Route to the Phone Booth|route" type="bool">True</Setting>
           <Setting id="350|Phone Booth|objective" type="bool">True</Setting>
           <Setting id="350|Route to Salieri Bar|route" type="bool">True</Setting>
           <Setting id="checkpoint-355" type="bool">True</Setting>
-          <Setting id="checkpoint-360" type="bool">False</Setting>
+          <Setting id="checkpoint-360" type="bool">True</Setting>
           <Setting id="360|On the Way to the Car|location" type="bool">True</Setting>
           <Setting id="360|Route to the Car|route" type="bool">True</Setting>
-          <Setting id="360|Car Reached|sound" type="bool">True</Setting>
-          <Setting id="360|Planting the Bomb|sound" type="bool">True</Setting>
+          <Setting id="360|Car Reached|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-370" type="bool">True</Setting>
           <Setting id="370|Route to Rainbow Garden|route" type="bool">True</Setting>
           <Setting id="checkpoint-372" type="bool">True</Setting>
@@ -344,16 +343,16 @@
           <Setting id="390|On the Way to Salieri Bar|location" type="bool">False</Setting>
           <Setting id="390|Route to Salieri Bar|route" type="bool">False</Setting>
           <Setting id="390|Route to the Bolt-Thrower|route" type="bool">True</Setting>
-          <Setting id="390|Bolt-Thrower|car" type="bool">True</Setting>
+          <Setting id="390|Bolt-Thrower|console" type="bool">True</Setting>
           <Setting id="390|Route Bolt-Thrower -&gt; Lucas|route" type="bool">True</Setting>
-          <Setting id="390|Lucas Assignment|sound" type="bool">True</Setting>
+          <Setting id="390|Lucas Assignment|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-405" type="bool">True</Setting>
           <Setting id="405|Route to the Wounded Man|route" type="bool">True</Setting>
-          <Setting id="405|Wounded Man Reached|sound" type="bool">True</Setting>
+          <Setting id="405|Wounded Man Reached|subtitles" type="bool">True</Setting>
           <Setting id="405|Route to the Doctor|route" type="bool">True</Setting>
-          <Setting id="405|Wounded Man Saved|objective" type="bool">True</Setting>
+          <Setting id="405|Wounded Man Saved|subtitles" type="bool">True</Setting>
           <Setting id="405|Route back to Lucas|route" type="bool">True</Setting>
-          <Setting id="405|Reporting to Lucas|sound" type="bool">True</Setting>
+          <Setting id="405|Reporting to Lucas|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-407" type="bool">True</Setting>
           <Setting id="407|Route to the Bruno Speedster 851|route" type="bool">True</Setting>
           <Setting id="407|Bruno Speedster 851|objective" type="bool">True</Setting>
@@ -364,7 +363,7 @@
           <Setting id="410|Vincenzo: end|cutscene end" type="bool">True</Setting>
           <Setting id="checkpoint-415" type="bool">True</Setting>
           <Setting id="415|Route to the Bolt-Thrower|route" type="bool">True</Setting>
-          <Setting id="415|Bolt-Thrower|car" type="bool">True</Setting>
+          <Setting id="415|Bolt-Thrower|console" type="bool">True</Setting>
           <Setting id="415|Route to the Theatre|route" type="bool">True</Setting>
           <Setting id="415|Route to the Theatre (MR)|route" type="bool">False</Setting>
           <Setting id="415|Chase start|objective" type="bool">True</Setting>
@@ -375,12 +374,12 @@
           <Setting id="435|Route to Salieri Bar|route" type="bool">True</Setting>
           <Setting id="435|Salieri Bar|location" type="bool">True</Setting>
           <Setting id="435|Route to Lucas|route" type="bool">True</Setting>
-          <Setting id="435|Lucas Assignment|sound" type="bool">True</Setting>
+          <Setting id="435|Lucas Assignment|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-450" type="bool">True</Setting>
           <Setting id="450|Route to the Cliffs|route" type="bool">True</Setting>
           <Setting id="450|Car Dumped|objective" type="bool">True</Setting>
           <Setting id="450|Route back to Lucas|route" type="bool">True</Setting>
-          <Setting id="450|Reporting to Lucas|sound" type="bool">True</Setting>
+          <Setting id="450|Reporting to Lucas|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-452" type="bool">True</Setting>
           <Setting id="452|Route to the Celeste Marque 500|route" type="bool">True</Setting>
           <Setting id="452|Celeste Marque 500|objective" type="bool">True</Setting>
@@ -388,28 +387,28 @@
           <Setting id="mission-Election Campaign" type="bool">True</Setting>
           <Setting id="checkpoint-455" type="bool">True</Setting>
           <Setting id="455|Route to Ralphie|route" type="bool">True</Setting>
-          <Setting id="455|Ralphie: start|sound" type="bool">True</Setting>
+          <Setting id="455|Ralphie: start|subtitles" type="bool">True</Setting>
           <Setting id="455|Vincenzo: start|cutscene start" type="bool">True</Setting>
           <Setting id="455|Vincenzo: end|cutscene end" type="bool">True</Setting>
-          <Setting id="455|Ralphie: end|sound" type="bool">True</Setting>
+          <Setting id="455|Ralphie: end|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-460" type="bool">True</Setting>
           <Setting id="460|Route to the Prison|route" type="bool">True</Setting>
           <Setting id="checkpoint-465" type="bool">True</Setting>
           <Setting id="465|Out of the Sewer|cutscene end" type="bool">True</Setting>
-          <Setting id="465|Large Room|sound" type="bool">True</Setting>
-          <Setting id="465|Small Room|sound" type="bool">True</Setting>
+          <Setting id="465|Large Room|subtitles" type="bool">True</Setting>
+          <Setting id="465|Small Room|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-466" type="bool">True</Setting>
           <Setting id="466|Politician dead|objective" type="bool">True</Setting>
           <Setting id="466|Route to the Gate|route" type="bool">True</Setting>
           <Setting id="checkpoint-470" type="bool">True</Setting>
           <Setting id="470|Route to Salieri Bar|route" type="bool">False</Setting>
           <Setting id="470|Route to Lucas|route" type="bool">True</Setting>
-          <Setting id="470|Lucas Assignment|sound" type="bool">True</Setting>
+          <Setting id="470|Lucas Assignment|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-485" type="bool">True</Setting>
           <Setting id="485|Route to Lucas' Friend|route" type="bool">True</Setting>
           <Setting id="485|Picking up Lucas' Friend|objective" type="bool">True</Setting>
           <Setting id="485|Route back to Lucas|route" type="bool">True</Setting>
-          <Setting id="485|Reporting to Lucas|sound" type="bool">True</Setting>
+          <Setting id="485|Reporting to Lucas|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-487" type="bool">True</Setting>
           <Setting id="487|Route to the Lassiter V16 Appolyon|route" type="bool">True</Setting>
           <Setting id="487|Lassiter V16 Appolyon|objective" type="bool">True</Setting>
@@ -421,26 +420,26 @@
           <Setting id="490|Vincenzo: end|cutscene end" type="bool">True</Setting>
           <Setting id="checkpoint-495" type="bool">True</Setting>
           <Setting id="495|Route to the Truck|route" type="bool">True</Setting>
-          <Setting id="495|Documents Collected|item" type="bool">False</Setting>
-          <Setting id="495|Bolt Truck|car" type="bool">True</Setting>
+          <Setting id="495|Documents Collected|console" type="bool">True</Setting>
+          <Setting id="495|Bolt Truck|console" type="bool">True</Setting>
           <Setting id="495|Route to the Skip|route" type="bool">True</Setting>
-          <Setting id="495|Port Entrance|sound" type="bool">True</Setting>
+          <Setting id="495|Port Entrance|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-497" type="bool">False</Setting>
           <Setting id="checkpoint-500" type="bool">True</Setting>
           <Setting id="checkpoint-505" type="bool">True</Setting>
           <Setting id="505|Route to the Rendezvous Point|route" type="bool">True</Setting>
           <Setting id="505|Rendezvous Point|objective" type="bool">True</Setting>
           <Setting id="505|Route to the Warehouse|route" type="bool">True</Setting>
-          <Setting id="505|On the Way to the Warehouse 1|location" type="bool">False</Setting>
-          <Setting id="505|On the Way to the Warehouse 2|location" type="bool">False</Setting>
+          <Setting id="505|On the Way to the Warehouse 1|location" type="bool">True</Setting>
+          <Setting id="505|On the Way to the Warehouse 2|location" type="bool">True</Setting>
           <Setting id="mission-Moonlighting" type="bool">True</Setting>
           <Setting id="checkpoint-510" type="bool">True</Setting>
           <Setting id="checkpoint-515" type="bool">True</Setting>
           <Setting id="515|Route to the Bank|route" type="bool">True</Setting>
           <Setting id="checkpoint-520" type="bool">True</Setting>
-          <Setting id="520|Dialog 1: start|sound" type="bool">True</Setting>
-          <Setting id="520|Dialog 1: end|sound" type="bool">True</Setting>
-          <Setting id="520|Dialog 2: start|sound" type="bool">True</Setting>
+          <Setting id="520|Dialog 1: start|subtitles" type="bool">True</Setting>
+          <Setting id="520|Dialog 1: end|subtitles" type="bool">True</Setting>
+          <Setting id="520|Dialog 2: start|subtitles" type="bool">True</Setting>
           <Setting id="520|Dialog 2: end|objective" type="bool">True</Setting>
           <Setting id="checkpoint-525" type="bool">True</Setting>
           <Setting id="525|Route to Yellow Pete|route" type="bool">True</Setting>
@@ -452,32 +451,32 @@
           <Setting id="moon-route-to-bank" type="bool">False</Setting>
           <Setting id="moon-to-bank" type="bool">False</Setting>
           <Setting id="525|Route to Lucas|route" type="bool">True</Setting>
-          <Setting id="525|Lucas Assignment|sound" type="bool">True</Setting>
+          <Setting id="525|Lucas Assignment|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-530" type="bool">True</Setting>
           <Setting id="530|Route to Big Dick|route" type="bool">True</Setting>
-          <Setting id="530|Big Dick: start|sound" type="bool">True</Setting>
+          <Setting id="530|Big Dick: start|subtitles" type="bool">True</Setting>
           <Setting id="530|Big Dick: end|cutscene end" type="bool">True</Setting>
           <Setting id="530|Big Dick|cutscene end" type="bool">False</Setting>
-          <Setting id="530|Big Dick 2: start|sound" type="bool">True</Setting>
+          <Setting id="530|Big Dick 2: start|subtitles" type="bool">True</Setting>
           <Setting id="530|Big Dick 2: end|cutscene end" type="bool">True</Setting>
           <Setting id="530|Big Dick 2|cutscene end" type="bool">False</Setting>
           <Setting id="530|Route back to Lucas|route" type="bool">True</Setting>
-          <Setting id="530|Reporting to Lucas|sound" type="bool">True</Setting>
+          <Setting id="530|Reporting to Lucas|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-532" type="bool">True</Setting>
           <Setting id="532|Route to the Trautenberg Model J|route" type="bool">True</Setting>
-          <Setting id="532|Trautenberg Model J|car" type="bool">True</Setting>
+          <Setting id="532|Trautenberg Model J|console" type="bool">True</Setting>
           <Setting id="532|Route to Paulie's Apartment|route" type="bool">True</Setting>
           <Setting id="532|Route to the Bank|route" type="bool">True</Setting>
           <Setting id="checkpoint-535" type="bool">True</Setting>
           <Setting id="535|Vault|objective" type="bool">True</Setting>
-          <Setting id="535|Leaving the Bank|sound" type="bool">True</Setting>
+          <Setting id="535|Leaving the Bank|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-540" type="bool">True</Setting>
           <Setting id="540|Route to Twister|route" type="bool">True</Setting>
-          <Setting id="540|Approaching Twister|sound" type="bool">True</Setting>
+          <Setting id="540|Approaching Twister|subtitles" type="bool">True</Setting>
           <Setting id="540|Final dialog: start|cutscene start" type="bool">True</Setting>
           <Setting id="mission-The Death Of Art" type="bool">True</Setting>
           <Setting id="checkpoint-545" type="bool">True</Setting>
-          <Setting id="545|Schubert Extra Six Tudor|car" type="bool">False</Setting>
+          <Setting id="545|Schubert Extra Six Tudor|console" type="bool">False</Setting>
           <Setting id="checkpoint-550" type="bool">True</Setting>
           <Setting id="550|Route from Paulie's Flat to the Gallery|route" type="bool">False</Setting>
           <Setting id="DoA-to-gallery" type="bool">False</Setting>
@@ -485,20 +484,20 @@
           <Setting id="DoA-pete" type="bool">False</Setting>
           <Setting id="route-pete-gallery" type="bool">False</Setting>
           <Setting id="550|Route from Paulie's Flat to Lucas|route" type="bool">True</Setting>
-          <Setting id="550|Lucas Assignment|sound" type="bool">True</Setting>
+          <Setting id="550|Lucas Assignment|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-555" type="bool">True</Setting>
           <Setting id="555|Route to Hotel Corleone|route" type="bool">True</Setting>
-          <Setting id="555|Hotel Corleone|sound" type="bool">True</Setting>
-          <Setting id="555|Hideout Found|sound" type="bool">True</Setting>
+          <Setting id="555|Hotel Corleone|subtitles" type="bool">True</Setting>
+          <Setting id="555|Hideout Found|subtitles" type="bool">True</Setting>
           <Setting id="555|Route back to Lucas|route" type="bool">True</Setting>
-          <Setting id="555|Reporting to Lucas|sound" type="bool">True</Setting>
+          <Setting id="555|Reporting to Lucas|subtitles" type="bool">True</Setting>
           <Setting id="checkpoint-557" type="bool">True</Setting>
           <Setting id="557|Route to the Thor 812 Cabriolet FWD|route" type="bool">True</Setting>
-          <Setting id="557|Thor 812 Cabriolet FWD|car" type="bool">True</Setting>
+          <Setting id="557|Thor 812 Cabriolet FWD|console" type="bool">True</Setting>
           <Setting id="557|Route to the Gallery|route" type="bool">True</Setting>
           <Setting id="checkpoint-560" type="bool">True</Setting>
           <Setting id="560|Route to Sam Chase|route" type="bool">True</Setting>
-          <Setting id="560|Chasing Sam|sound" type="bool">True</Setting>
+          <Setting id="560|Chasing Sam|subtitles" type="bool">True</Setting>
           <Setting id="560|Route to Sam|route" type="bool">True</Setting>
           <Setting id="checkpoint-561" type="bool">True</Setting>
         </CustomSettings>

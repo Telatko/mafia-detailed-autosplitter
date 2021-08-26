@@ -754,6 +754,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name> </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name> The skip</Name>
       <Icon />
       <SplitTimes>
@@ -2897,6 +2906,24 @@
     </Segment>
     <Segment>
       <Name> Route to the Warehouse</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name> </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name> </Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
