@@ -809,7 +809,7 @@ start
 // Reset timer on "An Offer You Can't Refuse" load (you can comment this section out if you don't want this feature)
 reset
 {
-  return (current.mission == "mise01" && ((old.isLoading1 && !current.isLoading1) || (!old.isLoading3 && current.isLoading3)));
+  return (current.checkpoint == 0 && old.inCutscene == 0 && current.inCutscene == 1 && (DateTime.Now-vars.lastCheckpointTime).TotalSeconds < 7);
 }
 
 // Split for every mission change (at the very beginning of every loading)
@@ -981,7 +981,7 @@ split
           (split[1] == "objective" && old.objectiveId != current.objectiveId && Array.IndexOf(values, current.objectiveId+"") > -1) ||
           (split[1] == "race lap" && current.lap[current.lap.Length-1] == split[3][0] && old.lap != current.lap) ||
           (split[1] == "timeout" && secondsSinceLastCheckpoint > int.Parse(split[3])) ||
-          (split[1] == "timer" && current.timeLeft < old.timeLeft) ||
+          (split[1] == "timer" && current.timeLeft < old.timeLeft && old.checkpoint == current.checkpoint) ||
           (split[1] == "console" && wordMatch)
         )) {
           if (split[1] == "cutscene end") {
