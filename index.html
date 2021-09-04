@@ -62,7 +62,7 @@
         </div>
       </div>
     </div>
-    <div class="autosplitterFileRequired hidden" style="width: 64rem; margin: 12rem auto 4rem auto">
+    <div class="autosplitterFileRequired hidden" style="width: 63rem; margin: 12rem auto 4rem auto">
       <input id="categoryName" style="width: 16rem"/> Category name<br/>
       <input type="checkbox" id="bertoneRequired"/> <label for="bertoneRequired">Bertone% run - Don't split next mission unless Bertone task is finished</label>
       <div id="missions"></div>
@@ -83,7 +83,7 @@
       
       <h3>Using pre-made splits and layouts</h3>
       
-      <p>If you aren't too picky when it comes to which events should trigger splits and you are okay with using pre-made splits then setting up the splitter is easy. Please note that these are suitable only for 1.0 version of the game and all languages except Russian.</p>
+      <p>If you aren't too picky when it comes to which events should trigger splits and you are okay with using pre-made splits then setting up the splitter is easy. Please note that these are suitable only for 1.0 version of the game.</p>
       
       <ol>
         <li>Download your split and layout file from the tables below depending on the category you want to speedrun and how detailed the splits should be</li>
@@ -549,7 +549,9 @@
       
       <h4>Progress splits</h4>
       
-      <p>You might have noticed there are so-called <em>Progress</em> splits in the tables above. They are not meant to be a replacement for your primary splits but rather an interesting addition. Basically you would use <em>Realistic SoB</em> or <em>Detailed</em> splits as your primary splits and <em>Progress</em> splits in a separate LiveSplit window. Once you finish at least one run <em>Progress</em> splits can show you live prediction of your final time. The predicted time would change all the time without the need to finish a segment in your primary splits. Say you are driving somewhere and you need to slow down because of cops. The moment you start slowing down the predicted time would start increasing. This works by splitting all usual routes into many pieces, each having its own segment in LiveSplit. For this reason you should not show the splits in your layout.</p>
+      <p>You might have noticed there are so-called <em>Progress</em> splits in the tables above. They are not meant to be a replacement for your primary splits but rather an interesting addition. Basically you would use <em>Realistic SoB</em> or <em>Detailed</em> splits as your primary splits and <em>Progress</em> splits in a separate LiveSplit window. To setup <em>Progress</em> splits simply repeat the same steps above.</p>
+      
+      <p>Once you finish at least one run <em>Progress</em> splits can show you live prediction of your final time. The predicted time would change all the time without the need to finish a segment in your primary splits. Say you are driving somewhere and you need to slow down because of cops. The moment you start slowing down the predicted time would start increasing. This works by splitting all usual routes into many pieces, each having its own segment in LiveSplit. For this reason you should not show the splits in your layout.</p>
 
       <h3>Custom split events</h3>
       
@@ -604,7 +606,7 @@
       
       <p><strong>DISCLAIMER.</strong> This is a beta version and may contain bugs. Use on your own responsibility. Testing your setup, as well as binding hotkeys for switching splits on demand, is strongly recommended.</p>
       
-      <p>Version: 21.8.31</p>
+      <p>Version: 21.9.5</p>
     </div>
   </body>
 </html>
@@ -812,7 +814,6 @@
       sm: 'Speedrun Mod',
       nsm: 'vanilla version of the game and any non-speedrun mod',
       chaos: 'Chaos Mod',
-      ru: 'Russian version of the game',
       '1.2': '1.2 version of the game'
     }
     let labels = ''
