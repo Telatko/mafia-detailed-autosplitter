@@ -845,21 +845,30 @@ split
       }
       
       byte[] console = null;
-      uint consoleHash = 0;
-      if (old.consoleVisibleRows < current.consoleVisibleRows) {
+      var consoleHashes = new List<uint>();
+
+      int[] consoleIndices = new int[] {};
+
+      if (current.consoleVisibleRows == 5)
+        consoleIndices = new int[] {0, 1, 2, 3, 4};
+      else if (old.consoleVisibleRows < current.consoleVisibleRows) {
         vars.consoleIndex = (current.consoleNextRowIndex + current.consoleVisibleRows - 1) % 5;
         vars.consoleAt = DateTime.Now;
       }
-      else if (vars.consoleIndex >= 0 && (DateTime.Now-vars.consoleAt).TotalSeconds > 0.1) {
-        var consoleRows = new byte[][] { current.consoleRow0, current.consoleRow1, current.consoleRow2, current.consoleRow3, current.consoleRow4 };
-        console = consoleRows[vars.consoleIndex];
+      else if (vars.consoleIndex >= 0 && (DateTime.Now-vars.consoleAt).TotalSeconds > 0.1)
+        consoleIndices = new int[] {vars.consoleIndex};
+      
+      var consoleRows = new byte[][] { current.consoleRow0, current.consoleRow1, current.consoleRow2, current.consoleRow3, current.consoleRow4 };
+      foreach(var index in consoleIndices) {
+        console = consoleRows[index];
         vars.consoleIndex = -1;
-        
         int i = 0;
+        uint consoleHash = 0;
         while(console[i] != 0)
           consoleHash = ((consoleHash << 13) | (consoleHash >> 19)) + console[i++];
+        consoleHashes.Add(consoleHash);
       }
-      current.consoleHash = consoleHash;
+      current.consoleHash = consoleHashes.Count > 0 ? consoleHashes[0] : 0;
 
       int j = 0;
       uint subtitlesHash = 0;
@@ -950,6 +959,11 @@ split
         var id = split[6];
         var values = split[3].Split(' ');
         current.lap = current.raceLap.Split('/')[0];
+        
+        var consoleMatch = false;
+        if (split[1] == "console")
+          foreach(var hash in consoleHashes)
+            consoleMatch = consoleMatch || Array.IndexOf(values, hash+"") > -1;
 
         if (split[1] == "route" && settings[id] && (!vars.splitDone.Contains(id) || vars.activeRoute == id)) {
           if(!vars.splitDone.Contains(id)) {
@@ -991,7 +1005,7 @@ split
           (split[1] == "race lap" && current.lap[current.lap.Length-1] == split[3][0] && old.lap != current.lap) ||
           (split[1] == "timeout" && secondsSinceLastCheckpoint > int.Parse(split[3])) ||
           (split[1] == "timer" && current.timeLeft < old.timeLeft && old.checkpoint == current.checkpoint) ||
-          (split[1] == "console" && Array.IndexOf(values, current.consoleHash+"") > -1)
+          (split[1] == "console" && consoleMatch)
         )) {
           if (split[1] == "cutscene end") {
             vars.nextCutscene++;
