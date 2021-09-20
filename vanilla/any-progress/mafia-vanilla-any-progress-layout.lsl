@@ -53,6 +53,7 @@
           <Setting id="sarah" type="bool">True</Setting>
           <Setting id="whore" type="bool">True</Setting>
           <Setting id="checkpoint-start" type="bool">False</Setting>
+          <Setting id="checkpoint-reset" type="bool">False</Setting>
           <Setting id="fine-tuned-splits" type="bool">True</Setting>
           <Setting id="bertone-required" type="bool">False</Setting>
           <Setting id="debug" type="bool">True</Setting>
@@ -352,6 +353,7 @@
           <Setting id="405|Wounded Man Reached|subtitles" type="bool">False</Setting>
           <Setting id="405|Route to the Doctor|route" type="bool">False</Setting>
           <Setting id="405|Wounded Man Saved|subtitles" type="bool">False</Setting>
+          <Setting id="405|Wounded Man Saved|objective" type="bool">False</Setting>
           <Setting id="405|Route back to Lucas|route" type="bool">False</Setting>
           <Setting id="405|Reporting to Lucas|subtitles" type="bool">False</Setting>
           <Setting id="checkpoint-407" type="bool">False</Setting>

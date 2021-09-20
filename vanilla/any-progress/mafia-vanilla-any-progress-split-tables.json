@@ -675,7 +675,7 @@
   },
   "omerta-joe-subtitles": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
   "omerta-joe-location": {
     "name": " Going to the hideout",
@@ -1023,7 +1023,7 @@
   },
   "checkpoint-360": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
   "360|On the Way to the Car|location": {
     "name": " On the Way to the Car",
@@ -1075,7 +1075,7 @@
   },
   "checkpoint-390": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
   "390|Route from the Port to Lucas|route": {
     "name": " ",
@@ -1395,7 +1395,7 @@
   },
   "495|Documents Collected|console": {
     "name": " ",
-    "checked": false
+    "checked": true
   },
   "495|Bolt Truck|console": {
     "name": " The skip",
@@ -1623,7 +1623,7 @@
   },
   "DoA-to-gallery": {
     "name": " ",
-    "checked": true
+    "checked": false
   },
   "DoA-route-to-pete": {
     "name": " ",
