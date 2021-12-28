@@ -262,7 +262,7 @@ startup
     new string[] {   "mise08-mesto"                                 , "scene"         , ""                                            , ""                                                                                       , ""                                                                     , ""                                                                                 },
     new string[] {     "Talk With Frank"                            , "checkpoint"    , "real"                                        , "150"                                                                                    , ""                                                                     , ""                                                                                 },
     new string[] {       "Route to the Bolt-Thrower"                , "route"         , "!mr"                                         , "1 -1774 2 -1783 37 16"                                                                  , ""                                                                     , "150|Bolt-Thrower|console"                                                         },
-    new string[] {       "Bolt-Thrower"                             , "console"       , "!mr"                                         , "1491291777"                                                                             , ""                                                                     , ""                                                                                 },
+    new string[] {       "Bolt-Thrower"                             , "console"       , "!mr"                                         , "1491291777 2715436740"                                                                  , ""                                                                     , ""                                                                                 },
     new string[] {       "Route to Hotel Corleone"                  , "route"         , "!any"                                        , "1 -1783 37 -551 -440 90"                                                                , "150|Bolt-Thrower|console"                                             , ""                                                                                 },
     new string[] {       "Bolt Ace"                                 , "console"       , "!any !lucas"                                 , "2548128649 2050989914 3011646491 329529955 3834527488 2711495181"                       , ""                                                                     , ""                                                                                 },
     new string[] {       "On the Way to the Hotel"                  , "location"      , ""                                            , "-1400 * | 50 *"                                                                         , ""                                                                     , ""                                                                                 },
@@ -694,6 +694,7 @@ startup
   string mid = null;
   List<string[]> checkpoint = null;
   var hasSettingsKey = new HashSet<string>();
+  vars.currentCheckpoint = vars.oldCheckpoint = -1;
 
   foreach (var split in vars.splitDefinitions) {
     if (split[1] == "mission") {
@@ -751,6 +752,9 @@ update
   if (!current.isLoaded) {
     vars.lastCheckpointTime = DateTime.Now;
   }
+  
+  vars.oldCheckpoint = (old.checkpoint == 570 ? vars.oldCheckpoint : old.checkpoint);
+  vars.currentCheckpoint = (current.checkpoint == 570 ? vars.currentCheckpoint : current.checkpoint);
 }
 
 start
@@ -758,17 +762,17 @@ start
   if (current.mission == "extrem" && !current.inMission && old.isLoading3 && !current.isLoading3)
     return true;
 
-  if ((!old.m1Cutscene && current.m1Cutscene && current.mission == "mise01") || (settings["checkpoint-start"] && current.checkpoint > 0 && ((old.isLoading3 && !current.isLoading3) || (current.isLoading3 && Array.IndexOf(vars.fastCheckpoints, current.checkpoint) > -1)))) {
+  if ((!old.m1Cutscene && current.m1Cutscene && current.mission == "mise01") || (settings["checkpoint-start"] && current.checkpoint > 0 && current.checkpoint != 570 && ((old.isLoading3 && !current.isLoading3) || (current.isLoading3 && Array.IndexOf(vars.fastCheckpoints, current.checkpoint) > -1)))) {
     vars.mandatoryCheckpoints = (settings["bertone-required"] ? (new List<int>(vars.mainCheckpoints)).Concat(new List<int>(vars.bertoneCheckpoints)).ToArray() : vars.mainCheckpoints);
     Array.Sort(vars.mandatoryCheckpoints);
-    vars.lastCheckpoint = current.checkpoint;
+    vars.currentCheckpoint = vars.oldCheckpoint = vars.lastCheckpoint = (current.checkpoint == 570 ? 0 : current.checkpoint);
     vars.nextMandatoryCheckpointIndex = 1;
-    while (vars.mandatoryCheckpoints[vars.nextMandatoryCheckpointIndex] <= current.checkpoint)
+    while (vars.mandatoryCheckpoints[vars.nextMandatoryCheckpointIndex] <= vars.currentCheckpoint)
       vars.nextMandatoryCheckpointIndex++;
     vars.splitDone.Clear();
     vars.nextCutscene = 0;
     vars.debug = new List<string>();
-    vars.splits = vars.checkpoints[current.checkpoint];
+    vars.splits = vars.checkpoints[vars.currentCheckpoint];
     vars.currentTransition = null;
     vars.sceneTransitions = new List<string[]>() { new string[] { "60", "mise05-saliery", "70" }, new string[] { "230", "mise10-letiste", "240" }, new string[] { "425", "mise16-mesto", "435" }, new string[] { "495", "mise18-pristav", "500" } };
     string scene = null;
@@ -810,8 +814,8 @@ start
 // Reset timer on "An Offer You Can't Refuse" load (you can comment this section out if you don't want this feature)
 reset
 {
-  return (current.checkpoint == 0 && old.inCutscene == 0 && current.inCutscene == 1 && (DateTime.Now-vars.lastCheckpointTime).TotalSeconds < 7) ||
-    (settings["checkpoint-reset"] && old.checkpoint > current.checkpoint && (DateTime.Now-vars.lastCheckpointTime).TotalSeconds < timer.CurrentAttemptDuration.TotalSeconds - 1);
+  return (vars.currentCheckpoint == 0 && old.inCutscene == 0 && current.inCutscene == 1 && (DateTime.Now-vars.lastCheckpointTime).TotalSeconds < 7) ||
+    (settings["checkpoint-reset"] && vars.oldCheckpoint > vars.currentCheckpoint && (DateTime.Now-vars.lastCheckpointTime).TotalSeconds < timer.CurrentAttemptDuration.TotalSeconds - 1);
 }
 
 // Split for every mission change (at the very beginning of every loading)
@@ -826,7 +830,7 @@ split
 
   if (current.mission.Contains("mise") && old.mission != "00menu") {
     // Final split
-    if (old.checkpoint == vars.finalcheckpoint && current.checkpoint == vars.finalcheckpoint) {
+    if (vars.oldCheckpoint == vars.finalcheckpoint && vars.currentCheckpoint == vars.finalcheckpoint) {
       return (old.finalCutscene <= vars.finalCutscene && current.finalCutscene > vars.finalCutscene);
     }
 
@@ -857,7 +861,7 @@ split
       }
       else if (vars.consoleIndex >= 0 && (DateTime.Now-vars.consoleAt).TotalSeconds > 0.1)
         consoleIndices = new int[] {vars.consoleIndex};
-      
+
       var consoleRows = new byte[][] { current.consoleRow0, current.consoleRow1, current.consoleRow2, current.consoleRow3, current.consoleRow4 };
       foreach(var index in consoleIndices) {
         console = consoleRows[index];
@@ -879,7 +883,7 @@ split
       if(old.language != current.language) vars.debug.Add("  language: "+current.language);
       if(old.cutscene != current.cutscene) vars.debug.Add("  cutscene: "+current.cutscene);
       if(old.scene != current.scene) vars.debug.Add("  scene: "+current.scene);
-      if(old.checkpoint != current.checkpoint) vars.debug.Add("  checkpoint: "+current.checkpoint);
+      if(vars.oldCheckpoint != vars.currentCheckpoint) vars.debug.Add("  checkpoint: "+vars.currentCheckpoint);
       if(old.objectiveId != current.objectiveId) vars.debug.Add("  objectiveId: "+current.objectiveId);
       if(old.subtitlesChange != current.subtitlesChange) vars.debug.Add("  subtitlesChange: "+current.subtitlesChange);
       if(old.consoleVisibleRows != current.consoleVisibleRows) vars.debug.Add("  consoleVisibleRows: "+current.consoleVisibleRows);
@@ -888,16 +892,17 @@ split
       if(old.isLoaded != current.isLoaded) vars.debug.Add("  isLoaded: "+current.isLoaded);
       if(old.isLoading3 != current.isLoading3) vars.debug.Add("  isLoading3: "+current.isLoading3);
       if(old.inMission != current.inMission) vars.debug.Add("  inMission: "+current.inMission);
+      if(old.mission != current.mission) vars.debug.Add("  mission: "+current.mission);
       if (secondsSinceLastCheckpoint > 1) {
         if(old.subtitlesHash != current.subtitlesHash) vars.debug.Add("  subtitlesHash: "+current.subtitlesHash);
         if(old.consoleHash != current.consoleHash) vars.debug.Add("  consoleHash: "+current.consoleHash);
       }
 
-      if (current.checkpoint == vars.lastCheckpoint && old.scene != current.scene) {
+      if (vars.currentCheckpoint == vars.lastCheckpoint && old.scene != current.scene) {
         foreach(var tran in vars.sceneTransitions) {
-          if (tran[0] == current.checkpoint+"" && tran[1] == current.scene && settings["checkpoint-"+tran[2]]) {
+          if (tran[0] == vars.currentCheckpoint+"" && tran[1] == current.scene && settings["checkpoint-"+tran[2]]) {
             vars.currentTransition = tran;
-            vars.debug.Add("TRANSITION SPLIT "+current.checkpoint);
+            vars.debug.Add("TRANSITION SPLIT "+vars.currentCheckpoint);
             if (vars.activeRoute != "") {
               vars.splitsDue += vars.remainingSteps;
               vars.activeRoute = "";
@@ -910,18 +915,18 @@ split
         vars.nextCutscene = 0;
       }
 
-      if (vars.lastCheckpoint < current.checkpoint && current.checkpoint <= vars.mandatoryCheckpoints[vars.nextMandatoryCheckpointIndex]) {
-        if (Array.IndexOf(vars.bertoneCheckpoints, current.checkpoint) == -1 || settings["bertone-required"])
+      if (vars.lastCheckpoint < vars.currentCheckpoint && vars.currentCheckpoint <= vars.mandatoryCheckpoints[vars.nextMandatoryCheckpointIndex]) {
+        if (Array.IndexOf(vars.bertoneCheckpoints, vars.currentCheckpoint) == -1 || settings["bertone-required"])
           foreach(var s in vars.checkpoints[vars.lastCheckpoint])
             if (s[1] != "checkpoint" && settings[s[6]] && !vars.splitDone.Contains(s[6]))
               vars.splitsDue += (s[1] == "route" ? int.Parse(s[3].Split(' ')[5])-1 : 1);
-        vars.splits = vars.checkpoints[current.checkpoint];
-        vars.lastCheckpoint = current.checkpoint;
+        vars.splits = vars.checkpoints[vars.currentCheckpoint];
+        vars.lastCheckpoint = vars.currentCheckpoint;
         vars.nextCutscene = 0;
         vars.lastCheckpointTime = DateTime.Now;
         vars.subtitlesChangedAt = new DateTime(2002, 8, 28, 0, 0, 0);
         vars.debug.Clear();
-        if (current.checkpoint == vars.mandatoryCheckpoints[vars.nextMandatoryCheckpointIndex]) {
+        if (vars.currentCheckpoint == vars.mandatoryCheckpoints[vars.nextMandatoryCheckpointIndex]) {
           vars.nextMandatoryCheckpointIndex++;
         }
 
@@ -932,17 +937,17 @@ split
 
         foreach(var split in vars.splits) {
           if (split[1] == "checkpoint" && !settings["checkpoint-"+split[3]]) {
-            vars.debug.Add("CHECKPOINT SPLIT "+current.checkpoint+" disabled");
+            vars.debug.Add("CHECKPOINT SPLIT "+vars.currentCheckpoint+" disabled");
             return false;
           }
         }
         var shouldSplit = (vars.currentTransition == null);
         vars.currentTransition = null;
-        vars.debug.Add("CHECKPOINT SPLIT "+current.checkpoint+" "+shouldSplit);
+        vars.debug.Add("CHECKPOINT SPLIT "+vars.currentCheckpoint+" "+shouldSplit);
         return shouldSplit;
       }
 
-      var splits = (current.checkpoint == vars.lastCheckpoint ? vars.splits : new List<string[]>());
+      var splits = (vars.currentCheckpoint == vars.lastCheckpoint ? vars.splits : new List<string[]>());
       var cutsceneEnded = false;
 
       foreach(var split in splits) {
@@ -1004,7 +1009,7 @@ split
           (split[1] == "objective" && old.objectiveId != current.objectiveId && Array.IndexOf(values, current.objectiveId+"") > -1) ||
           (split[1] == "race lap" && current.lap[current.lap.Length-1] == split[3][0] && old.lap != current.lap) ||
           (split[1] == "timeout" && secondsSinceLastCheckpoint > int.Parse(split[3])) ||
-          (split[1] == "timer" && current.timeLeft < old.timeLeft && old.checkpoint == current.checkpoint) ||
+          (split[1] == "timer" && current.timeLeft < old.timeLeft && vars.oldCheckpoint == vars.currentCheckpoint) ||
           (split[1] == "console" && consoleMatch)
         )) {
           if (split[1] == "cutscene end") {
